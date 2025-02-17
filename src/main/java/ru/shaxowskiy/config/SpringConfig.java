@@ -1,5 +1,6 @@
 package ru.shaxowskiy.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -12,6 +13,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -72,10 +74,6 @@ public class SpringConfig implements WebMvcConfigurer {
         dataSource.setUrl(environment.getProperty("db.url"));
         dataSource.setUsername(environment.getProperty("db.username"));
         dataSource.setPassword(environment.getProperty("db.password"));
-        System.out.println("Driver: " + environment.getProperty("db.driver"));
-        System.out.println("URL: " + environment.getProperty("db.url"));
-        System.out.println("Username: " + environment.getProperty("db.username"));
-        System.out.println("Password: " + environment.getProperty("db.password"));
 
         return dataSource;
     }
@@ -95,4 +93,14 @@ public class SpringConfig implements WebMvcConfigurer {
         properties.put("hibernate.show_sql", "true");
         return properties;
     }
+
+    @Bean
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
+    }
+    @Bean
+    public ObjectMapper objectMapper(){
+        return new ObjectMapper();
+    }
+
 }
