@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome</title>
+    <title>Weather Search</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<h1>Welcome!</h1>
+<div class="container">
+    <h1>Welcome</h1>
+    <form th:action="@{/weather}" method="get">
+        <div class="form-group">
+            <label for="city">Enter City:</label>
+            <input type="text" id="city" name="city" class="form-control" placeholder="Enter city name" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
 </body>
 </html>

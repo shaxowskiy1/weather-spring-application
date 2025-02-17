@@ -23,12 +23,19 @@ public class UserRepository implements CrudRepository<User, Long> {
 
     @Override
     public User findById(Long id) {
-        return null;
+        try (Session session = sessionFactory.openSession()) {
+            Query<User> query = session.createQuery("FROM User WHERE id = :id", User.class);
+            query.setParameter("id", id);
+            return query.getSingleResult();
+        }
     }
 
     @Override
     public List<User> findAll() {
-        return null;
+        try(Session session = sessionFactory.openSession()){
+            Query<User> query = session.createQuery("FROM User", User.class);
+            return query.getResultList();
+        }
     }
 
     @Override
