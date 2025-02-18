@@ -11,18 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 public class WelcomeController {
 
     @GetMapping("/welcome")
-    public String welcome(HttpServletRequest req, HttpServletResponse res, Model model){
-//        HttpSession httpSession = req.getSession();
-//
-//        Integer count = (Integer) httpSession.getAttribute("count");
-//
-//        if(count == null) {
-//            httpSession.setAttribute("count", 1);
-//            count = 1;
-//        } else {
-//            httpSession.setAttribute("count", count + 1);
-//        }
-//        model.addAttribute("count", count);
+    public String welcome(){
         return "welcome";
     }
+
 }

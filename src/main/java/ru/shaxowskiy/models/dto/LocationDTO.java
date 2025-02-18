@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -16,6 +17,9 @@ public class LocationDTO {
 
     @JsonProperty("sys")
     private Sys sys;
+
+    @JsonProperty("weather")
+    private List<Weather> weather;
 
     @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
@@ -29,5 +33,11 @@ public class LocationDTO {
     public static class Sys {
         private String country;
         private String state;
+    }
+    @Data
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    private static class Weather {
+        private String main;
+        private String description;
     }
 }

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Search</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<p th:text="${weather.getName()}"/>
+<p th:text="${weather.getCoord().getLat()}"/>
+<p th:text="${weather.getCoord().getLon()}"/>
+<p th:text="${weather.getSys().getCountry()}"/>
+<p th:text="${weather.getSys().getState()}"/>
+<ul>
+    <li th:each="weather : ${weather.getWeather()}">
+        <p th:text="'Main: ' + ${weather.getDescription()}"></p>
+        <p th:text="'Description: ' + ${weather.getMain()}"></p>
+    </li>
+</ul>
+<form method="post" action="/welcome">
+    <div class="mt-auto">
+        <button type="submit" class="btn btn-primary w-100">Add</button>
+    </div>
+</form>
+</body>
+</html>
