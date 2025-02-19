@@ -19,8 +19,9 @@ public class Location {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    private User user;
+    private String name;
+//    @ManyToOne
+//    private User user;
     private BigDecimal latitude;
     private BigDecimal longitude;
 }
