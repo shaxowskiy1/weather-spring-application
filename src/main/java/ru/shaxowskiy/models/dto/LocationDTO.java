@@ -10,6 +10,7 @@ import java.util.List;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class LocationDTO {
+    @JsonProperty("name")
     private String name;
 
     @JsonProperty("coord")
@@ -32,11 +33,10 @@ public class LocationDTO {
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Sys {
         private String country;
-        private String state;
     }
     @Data
     @JsonIgnoreProperties(ignoreUnknown = true)
-    private static class Weather {
+    public static class Weather {
         private String main;
         private String description;
     }

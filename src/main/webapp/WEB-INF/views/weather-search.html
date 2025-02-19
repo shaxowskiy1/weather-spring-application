@@ -6,18 +6,27 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<p th:text="${weather.getName()}"/>
-<p th:text="${weather.getCoord().getLat()}"/>
-<p th:text="${weather.getCoord().getLon()}"/>
-<p th:text="${weather.getSys().getCountry()}"/>
-<p th:text="${weather.getSys().getState()}"/>
+<p th:text="${location.getName()}"/>
+<p th:text="${location.getCoord().getLat()}"/>
+<p th:text="${location.getCoord().getLon()}"/>
+<p th:text="${location.getSys().getCountry()}"/>
 <ul>
-    <li th:each="weather : ${weather.getWeather()}">
+    <li th:each="weather : ${location.getWeather()}">
         <p th:text="'Main: ' + ${weather.getDescription()}"></p>
         <p th:text="'Description: ' + ${weather.getMain()}"></p>
     </li>
 </ul>
-<form method="post" action="/welcome">
+<form th:method="post" th:action="@{/welcome}" th:object="${location}">
+    <input type="hidden" name="name" th:value="${location.getName()}"/>
+    <input type="hidden" name="coord.lat" th:value="${location.getCoord().getLat()}"/>
+    <input type="hidden" name="coord.lon" th:value="${location.getCoord().getLon()}"/>
+    <input type="hidden" name="sys.country" th:value="${location.getSys().getCountry()}"/>
+    <li th:each="weather: ${location.getWeather()}">
+        <input type="hidden" name="weather.main" th:value="${weather.getMain()}"/>
+        <input type="hidden" name="weather.description" th:value="${weather.getDescription()}"/>
+
+    </li>
+
     <div class="mt-auto">
         <button type="submit" class="btn btn-primary w-100">Add</button>
     </div>
