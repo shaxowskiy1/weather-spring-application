@@ -30,6 +30,13 @@
     <div class="mt-auto">
         <button type="submit" class="btn btn-primary w-100">Add</button>
     </div>
+
+    <br>
+    <hr>
+    <h2>History added location:</h2>
+    <li th:each="historyLocation : ${history}">
+        <p th:text="'Name: ' + ${historyLocation.getName()}"></p>
+    </li>
 </form>
 </body>
 </html>

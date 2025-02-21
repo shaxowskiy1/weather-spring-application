@@ -1,5 +1,6 @@
 package ru.shaxowskiy.repositories;
 
+import org.hibernate.Session;
 import org.hibernate.SessionBuilder;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -25,8 +26,12 @@ public class LocationRepository implements CrudRepository<Location, Long> {
     }
 
     @Override
-    public List<Location> findAll() {
-        return null;
+    public List<Location> findAll(){
+        Transaction transaction = null;
+        try(Session session = sessionFactory.openSession()){
+            transaction = session.beginTransaction();
+            return session.createQuery("FROM Location").getResultList();
+        }
     }
 
     @Override

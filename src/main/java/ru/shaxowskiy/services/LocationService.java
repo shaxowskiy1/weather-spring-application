@@ -7,6 +7,8 @@ import ru.shaxowskiy.models.User;
 import ru.shaxowskiy.models.dto.LocationDTO;
 import ru.shaxowskiy.repositories.LocationRepository;
 
+import java.util.List;
+
 @Service
 public class LocationService {
 
@@ -25,5 +27,9 @@ public class LocationService {
         location.setLongitude(locationDTO.getCoord().getLon());
 //        location.setUser(new User());
         locationRepository.save(location);
+    }
+
+    public List<Location> findAll() {
+        return locationRepository.findAll();
     }
 }
