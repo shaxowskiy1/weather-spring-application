@@ -1,5 +1,6 @@
 package ru.shaxowskiy.services;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.shaxowskiy.models.User;
@@ -18,6 +19,8 @@ public class UserService {
     }
 
     public void addUser(User user){
+        String password = user.getPassword();
+        user.setPassword(BCrypt.hashpw(password, BCrypt.gensalt()));
         userRepository.save(user);
     }
 

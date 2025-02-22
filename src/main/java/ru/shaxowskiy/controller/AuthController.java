@@ -2,6 +2,7 @@ package ru.shaxowskiy.controller;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,7 @@ import ru.shaxowskiy.services.UserService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Arrays;
 
 @Slf4j
 @Controller
@@ -56,13 +58,20 @@ public class AuthController {
     @PostMapping("/login")
     public String login(@RequestParam String username, @RequestParam String password, Model model, HttpServletResponse response) {
         User foundUser = userService.findByUsername(username);
-        if (username.equals(foundUser.getUsername()) && password.equals(foundUser.getPassword())) {
+        if (username.equals(foundUser.getUsername()) && BCrypt.checkpw(password, foundUser.getPassword())) {
             model.addAttribute("message", "Успешный вход!");
             sessionService.createSession(foundUser, response);
-            return "redirect:/auth/welcome";
+            return "redirect:/welcome";
         } else {
             model.addAttribute("error", "Неверное имя пользователя или пароль.");
             return "redirect:/auth/login";
         }
+    }
+
+    @PostMapping("/logout")
+    public String logout(HttpServletRequest req){
+        System.out.println(Arrays.toString(req.getCookies()));
+        sessionService.delete(req);
+        return "redirect:/auth/login";
     }
 }

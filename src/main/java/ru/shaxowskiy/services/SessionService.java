@@ -7,9 +7,12 @@ import ru.shaxowskiy.models.User;
 import ru.shaxowskiy.repositories.SessionRepository;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -32,6 +35,39 @@ public class SessionService {
 
         Cookie cookie = new Cookie("session_id", sessionId);
         cookie.setHttpOnly(true);
+        cookie.setMaxAge(60 * 60 * 30);
+        cookie.setPath("/");
         res.addCookie(cookie);
+    }
+
+    public Optional<User> getUserFromSession(HttpServletRequest req) {
+        Cookie[] cookies = req.getCookies();
+        System.out.println("GET USER FROM SESS" + Arrays.toString(req.getCookies()));
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if ("session_id".equals(cookie.getName())) {
+                    System.out.println("THIS COOKIE IS" + cookie.getValue());
+                    String sessionId = cookie.getValue();
+                    Session session = sessionRepository.findById(sessionId);
+                    if (session != null && session.getExpiresAt().isAfter(LocalDateTime.now())) {
+                        return Optional.ofNullable(session.getUser());
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    public void delete(HttpServletRequest req) {
+        Cookie[] cookies = req.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if ("session_id".equals(cookie.getName())) {
+                    String sessionId = cookie.getValue();
+                    sessionRepository.delete(sessionId);
+                }
+            }
+        }
+
     }
 }

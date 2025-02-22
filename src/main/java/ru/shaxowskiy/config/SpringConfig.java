@@ -94,11 +94,13 @@ public class SpringConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public RestTemplate restTemplate(){
+    public RestTemplate restTemplate() {
         return new RestTemplate();
     }
+
     @Bean
-    public ObjectMapper objectMapper(){
+
+    public ObjectMapper objectMapper() {
         return new ObjectMapper();
     }
 }
