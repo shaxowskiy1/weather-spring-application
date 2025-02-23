@@ -6,14 +6,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<div th:fragment="header" style="position: relative; padding: 10px; display: flex; justify-content: space-between; align-items: center;">
-    <div style="display: flex; gap: 20px;">
-        <a th:text="${user.getUsername()}"/>
+<div th:fragment="header" style="position: fixed; top: 0; right: 0; padding: 10px; display: flex; align-items: center;">
+    <div style="display: flex; align-items: center; margin-right: 20px;">
+        <a th:text="${user.getUsername()}"></a>
     </div>
     <form th:action="@{/auth/logout}" th:method="post" style="margin: 0;">
         <button type="submit">Logout</button>
     </form>
 </div>
+
 <div class="container">
     <h1>Welcome</h1>
     <form th:action="@{/weather}" method="get">
