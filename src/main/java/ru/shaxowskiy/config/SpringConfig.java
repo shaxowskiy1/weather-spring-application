@@ -15,11 +15,13 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+import ru.shaxowskiy.controller.interceptors.AuthInterceptor;
 
 
 import javax.sql.DataSource;
@@ -35,11 +37,13 @@ public class SpringConfig implements WebMvcConfigurer {
 
     private final ApplicationContext applicationContext;
     private final Environment environment;
+    private final AuthInterceptor authInterceptor;
 
     @Autowired
-    public SpringConfig(ApplicationContext applicationContext, Environment environment) {
+    public SpringConfig(ApplicationContext applicationContext, Environment environment, AuthInterceptor authInterceptor) {
         this.applicationContext = applicationContext;
         this.environment = environment;
+        this.authInterceptor = authInterceptor;
     }
 
     @Bean
@@ -99,8 +103,13 @@ public class SpringConfig implements WebMvcConfigurer {
     }
 
     @Bean
-
     public ObjectMapper objectMapper() {
         return new ObjectMapper();
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(authInterceptor)
+                .addPathPatterns("/welcome/**");
     }
 }

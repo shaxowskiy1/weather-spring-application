@@ -9,7 +9,6 @@ import ru.shaxowskiy.repositories.SessionRepository;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Optional;
@@ -25,7 +24,7 @@ public class SessionService {
         this.sessionRepository = sessionRepository;
     }
 
-    public void createSession(User user, HttpServletResponse res){
+    public void createSession(User user, HttpServletResponse res) {
         String sessionId = UUID.randomUUID().toString();
         Session session = new Session();
         session.setId(sessionId);
@@ -69,5 +68,19 @@ public class SessionService {
             }
         }
 
+    }
+
+    public boolean isValid(Cookie[] cookies) {
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if ("session_id".equals(cookie.getName())) {
+                    String sessionId = cookie.getValue();
+                    if (sessionRepository.findById(sessionId) != null) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }

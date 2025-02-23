@@ -4,6 +4,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Repository;
 import ru.shaxowskiy.models.Session;
 
@@ -14,7 +15,7 @@ public class SessionRepository implements CrudRepository<Session, String>{
     private final SessionFactory sessionFactory;
 
     @Autowired
-    public SessionRepository(SessionFactory sessionFactory) {
+    public SessionRepository(@Lazy SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
