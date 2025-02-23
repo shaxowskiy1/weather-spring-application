@@ -2,21 +2,45 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-<h1>Registration</h1>
-<form action="#" th:action="@{/auth/register}" th:object="${user}" method="post">
-    <div>
-        <label for="login">Login:</label>
-        <input type="text" id="login" th:field="*{username}" required />
-    </div>
-    <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" th:field="*{password}" required />
-    </div>
-    <div>
-        <button type="submit">Register!</button>
-    </div>
-</form>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h1 class="text-2xl font-bold text-center mb-6">Registration</h1>
+    <form action="#" th:action="@{/auth/register}" th:object="${user}" method="post" class="space-y-6">
+        <div>
+            <label for="login" class="block text-sm font-medium text-gray-700">Login:</label>
+            <input
+                    type="text"
+                    id="login"
+                    th:field="*{username}"
+                    required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            />
+            <div th:if="${#fields.hasErrors('username')}" class="text-red-500 text-sm mt-1" th:errors="*{username}">Name Error</div>
+        </div>
+
+        <div>
+            <label for="password" class="block text-sm font-medium text-gray-700">Password:</label>
+            <input
+                    type="password"
+                    id="password"
+                    th:field="*{password}"
+                    required
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+            />
+            <div th:if="${#fields.hasErrors('password')}" class="text-red-500 text-sm mt-1" th:errors="*{password}">Name Error</div>
+        </div>
+
+        <div>
+            <button
+                    type="submit"
+                    class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+                Register!
+            </button>
+        </div>
+    </form>
+</div>
 </body>
 </html>

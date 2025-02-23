@@ -31,7 +31,8 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public String registration(@ModelAttribute("user") @Valid User user, BindingResult bindingResult){
+    public String registration(@ModelAttribute("user") @Valid User user,
+                               BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "redirect:/register";
         }
@@ -46,7 +47,13 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password, Model model) {
+    public String login(@RequestParam String username,
+                        @RequestParam String password,
+                        Model model,
+                        BindingResult bindingResult) {
+        if(bindingResult.hasErrors()){
+            return "redirect:/auth/login";
+        }
         User foundUser = userService.findByUsername(username);
         if (username.equals(foundUser.getUsername()) && password.equals(foundUser.getPassword())) {
             model.addAttribute("message", "Успешный вход!");
