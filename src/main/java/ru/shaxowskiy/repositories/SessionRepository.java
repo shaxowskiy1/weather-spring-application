@@ -18,7 +18,6 @@ public class SessionRepository implements CrudRepository<Session, String>{
         this.sessionFactory = sessionFactory;
     }
 
-
     @Override
     public Session findById(String sessionId) {
         Transaction transaction = null;

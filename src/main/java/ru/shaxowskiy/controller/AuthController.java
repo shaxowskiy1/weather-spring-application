@@ -33,8 +33,9 @@ public class AuthController {
 
     @GetMapping("/register")
     public String register(Model model){
-        log.info("GET-method register with form");
         model.addAttribute("user", new User());
+        System.out.println("GET-method register with form");
+        log.info("GET-method register with form");
         return "register";
     }
 
@@ -46,7 +47,6 @@ public class AuthController {
         }
         System.out.println("POST-method register with form");
         log.info("POST-method with user:{}", user);
-
         userService.addUser(user);
         return "redirect:login";
     }
@@ -56,7 +56,10 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public String login(@RequestParam String username, @RequestParam String password, Model model, HttpServletResponse response) {
+    public String login(@RequestParam String username,
+                        @RequestParam String password,
+                        Model model,
+                        HttpServletResponse response) {
         User foundUser = userService.findByUsername(username);
         if (username.equals(foundUser.getUsername()) && BCrypt.checkpw(password, foundUser.getPassword())) {
             model.addAttribute("message", "Успешный вход!");
