@@ -1,7 +1,7 @@
 package ru.shaxowskiy.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.hibernate.SessionFactory;
+import org.flywaydb.core.Flyway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -90,6 +90,7 @@ public class SpringConfig implements WebMvcConfigurer {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
         properties.put("hibernate.show_sql", "true");
+        properties.put("hibernate.ddl-auto", "validate");
         return properties;
     }
 
@@ -102,4 +103,15 @@ public class SpringConfig implements WebMvcConfigurer {
         return new ObjectMapper();
     }
 
+    @Bean
+    public Flyway flyway(){
+        Flyway flyway = Flyway.configure()
+                .dataSource(dataSource())
+                .locations("classpath:db/migration")
+                .load();
+
+        flyway.migrate();
+
+        return flyway;
+    }
 }

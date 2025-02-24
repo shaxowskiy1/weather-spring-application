@@ -1,15 +1,12 @@
---liquibase formatted sql
---changeset shaxowskiy:1
+
 CREATE TABLE Users (
-                       ID SERIAL PRIMARY KEY,
-                       Login VARCHAR(255) NOT NULL,
-                       Password VARCHAR(255) NOT NULL
+                       id SERIAL PRIMARY KEY,
+                       login VARCHAR(255) NOT NULL,
+                       password VARCHAR(255) NOT NULL
 );
 -- rollback DROP TABLE Users;
 
 
--- liquibase formatted sql
--- changeset shaxowskiy:2
 CREATE TABLE Locations (
                            id SERIAL PRIMARY KEY,          -- Автоинкремент, первичный ключ
                            name VARCHAR(255) NOT NULL,     -- Название локации
@@ -21,18 +18,13 @@ CREATE TABLE Locations (
                                    REFERENCES Users(ID)
                                    ON DELETE CASCADE            -- Удаление локаций при удалении пользователя
 );
--- rollback DROP TABLE Locations;
 
-
--- liquibase formatted sql
--- changeset shaxowskiy:3
 CREATE TABLE Sessions (
-                          ID UUID PRIMARY KEY,            -- Уникальный идентификатор сессии (GUID)
-                          UserId INT NOT NULL,            -- Пользователь, для которого создана сессия
-                          ExpiresAt TIMESTAMP NOT NULL,   -- Время истечения сессии
+                          id serial PRIMARY KEY,            -- Уникальный идентификатор сессии (GUID)
+                          user_id INT NOT NULL,            -- Пользователь, для которого создана сессия
+                          expires_at TIMESTAMP NOT NULL,   -- Время истечения сессии
                           CONSTRAINT fk_user
-                              FOREIGN KEY (UserId)
-                                  REFERENCES Users(ID)
+                              FOREIGN KEY (user_id)
+                                  REFERENCES Users(id)
                                   ON DELETE CASCADE            -- Удаление сессий при удалении пользователя
 );
--- rollback DROP TABLE Sessions;
