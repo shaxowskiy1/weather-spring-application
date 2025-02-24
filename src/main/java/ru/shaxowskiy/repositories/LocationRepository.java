@@ -39,6 +39,8 @@ public class LocationRepository implements CrudRepository<Location, Long> {
         Transaction transaction = null;
         try (org.hibernate.Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
+            User user = location.getUser();
+            session.save(user);
             session.save(location);
             transaction.commit();
         } catch (Exception e) {

@@ -33,9 +33,8 @@ public class AuthController {
 
     @GetMapping("/register")
     public String register(Model model){
+        log.info("Запрос GET успешно обработан /register");
         model.addAttribute("user", new User());
-        System.out.println("GET-method register with form");
-        log.info("GET-method register with form");
         return "register";
     }
 
@@ -45,8 +44,7 @@ public class AuthController {
         if(bindingResult.hasErrors()){
             return "redirect:/register";
         }
-        System.out.println("POST-method register with form");
-        log.info("POST-method with user:{}", user);
+        log.info("Запрос POST успешно обработан /register");
         userService.addUser(user);
         return "redirect:login";
     }
@@ -60,6 +58,7 @@ public class AuthController {
                         @RequestParam String password,
                         Model model,
                         HttpServletResponse response) {
+        log.info("Запрос GET успешно обработан /login");
         User foundUser = userService.findByUsername(username);
         if (username.equals(foundUser.getUsername()) && BCrypt.checkpw(password, foundUser.getPassword())) {
             model.addAttribute("message", "Успешный вход!");
@@ -73,7 +72,7 @@ public class AuthController {
 
     @PostMapping("/logout")
     public String logout(HttpServletRequest req){
-        System.out.println(Arrays.toString(req.getCookies()));
+        log.info("Запрос GET успешно обработан /logout");
         sessionService.delete(req);
         return "redirect:/auth/login";
     }
