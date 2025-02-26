@@ -14,7 +14,7 @@ public class OpenWeatherApiService {
 
     @Value("${API_KEY}")
     private String API_KEY;
-    private final String SEARCH_LOC_OF_NAME = "https://api.openweathermap.org/data/2.5/weather?";
+    private final String SEARCH_LOC_OF_NAME = "http://api.openweathermap.org/geo/1.0/direct?";
     private final String SEARCH_LOC_OF_COORD = "https://openweathermap.org/current#one";
 
     private final RestTemplate restTemplate;
@@ -27,10 +27,9 @@ public class OpenWeatherApiService {
     }
 
     public LocationDTO getInfoByCity(String city) throws JsonProcessingException {
-        String url = SEARCH_LOC_OF_NAME + "q=" + city + "&APPID=" + API_KEY;
+        String url = SEARCH_LOC_OF_NAME + "q=" + city + "&APPID=" + API_KEY + "&limit=" + 10;
         String forObject = restTemplate.getForObject(url, String.class);
         LocationDTO locationDTO = objectMapper.readValue(forObject, LocationDTO.class);
-        System.out.println(locationDTO);
         return locationDTO;
     }
 }

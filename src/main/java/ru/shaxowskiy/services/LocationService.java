@@ -2,23 +2,28 @@ package ru.shaxowskiy.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ru.shaxowskiy.exception.LocationNotFoundException;
 import ru.shaxowskiy.models.Location;
 import ru.shaxowskiy.models.User;
 import ru.shaxowskiy.models.dto.LocationDTO;
 import ru.shaxowskiy.repositories.LocationRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LocationService {
 
-    private LocationRepository locationRepository;
+    private final LocationRepository locationRepository;
 
     @Autowired
     public LocationService(LocationRepository locationRepository) {
         this.locationRepository = locationRepository;
     }
 
+    public Location findById(Long id){
+        return Optional.ofNullable(locationRepository.findById(id)).orElseThrow(() -> new LocationNotFoundException("This location is not found with id " + id));
+    }
 
     public void save(LocationDTO locationDTO) {
         Location location = new Location();

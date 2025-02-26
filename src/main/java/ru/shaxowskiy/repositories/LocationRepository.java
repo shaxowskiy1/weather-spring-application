@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionBuilder;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import ru.shaxowskiy.models.Location;
@@ -21,8 +22,13 @@ public class LocationRepository implements CrudRepository<Location, Long> {
     }
 
     @Override
-    public Location findById(Long aLong) {
-        return null;
+    public Location findById(Long locationId) {
+        Transaction transaction = null;
+        try(Session session = sessionFactory.openSession()){
+            transaction = session.beginTransaction();
+            Query query = session.createQuery("FROM Location WHERE id = :id");
+            return (Location) query.setParameter("id", locationId).getSingleResult();
+        }
     }
 
     @Override
