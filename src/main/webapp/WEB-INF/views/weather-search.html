@@ -6,16 +6,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<p th:text="${location.getName()}"/>
-<p th:text="${location.getCoord().getLat()}"/>
-<p th:text="${location.getCoord().getLon()}"/>
-<p th:text="${location.getSys().getCountry()}"/>
-<ul>
-    <li th:each="weather : ${location.getWeather()}">
-        <p th:text="'Main: ' + ${weather.getDescription()}"></p>
-        <p th:text="'Description: ' + ${weather.getMain()}"></p>
-    </li>
-</ul>
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+    <div th:each="location : ${locations}" style="margin-right: 20px;">
+        <p th:text="${location.getName()}"></p>
+        <p th:text="${location.getLatitude()}"></p>
+        <p th:text="${location.getLongitude()}"></p>
+        <p th:text="${location.getState()}"></p>
+        <p th:text="${location.getCountry()}"></p>
+    </div>
+</div>
+
+
+
 <form th:method="post" th:action="@{/welcome}" th:object="${location}">
     <input type="hidden" name="name" th:value="${location.getName()}"/>
     <input type="hidden" name="coord.lat" th:value="${location.getCoord().getLat()}"/>

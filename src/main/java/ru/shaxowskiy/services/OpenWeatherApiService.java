@@ -1,13 +1,15 @@
 package ru.shaxowskiy.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-import ru.shaxowskiy.models.dto.LocationDTO;
+import ru.shaxowskiy.models.dto.LocationResponseDTO;
+
+import java.util.List;
 
 @Service
 public class OpenWeatherApiService {
@@ -26,10 +28,10 @@ public class OpenWeatherApiService {
         this.objectMapper = objectMapper;
     }
 
-    public LocationDTO getInfoByCity(String city) throws JsonProcessingException {
+    public List<LocationResponseDTO> getInfoByCity(String city) throws JsonProcessingException {
         String url = SEARCH_LOC_OF_NAME + "q=" + city + "&APPID=" + API_KEY + "&limit=" + 10;
-        String forObject = restTemplate.getForObject(url, String.class);
-        LocationDTO locationDTO = objectMapper.readValue(forObject, LocationDTO.class);
+        String response = restTemplate.getForObject(url, String.class);
+        List<LocationResponseDTO> locationDTO = objectMapper.readValue(response, new TypeReference<List<LocationResponseDTO>>() {});
         return locationDTO;
     }
 }

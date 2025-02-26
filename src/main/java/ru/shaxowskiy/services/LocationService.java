@@ -4,8 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.shaxowskiy.exception.LocationNotFoundException;
 import ru.shaxowskiy.models.Location;
-import ru.shaxowskiy.models.User;
-import ru.shaxowskiy.models.dto.LocationDTO;
+import ru.shaxowskiy.models.dto.WeatherResponseDTO;
 import ru.shaxowskiy.repositories.LocationRepository;
 
 import java.util.List;
@@ -25,11 +24,11 @@ public class LocationService {
         return Optional.ofNullable(locationRepository.findById(id)).orElseThrow(() -> new LocationNotFoundException("This location is not found with id " + id));
     }
 
-    public void save(LocationDTO locationDTO) {
+    public void save(WeatherResponseDTO weatherResponseDTO) {
         Location location = new Location();
-        location.setName(locationDTO.getName());
-        location.setLatitude(locationDTO.getCoord().getLat());
-        location.setLongitude(locationDTO.getCoord().getLon());
+        location.setName(weatherResponseDTO.getName());
+        location.setLatitude(weatherResponseDTO.getCoord().getLat());
+        location.setLongitude(weatherResponseDTO.getCoord().getLon());
 //        location.setUser(new User());
         locationRepository.save(location);
     }

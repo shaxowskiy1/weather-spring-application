@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LocationDTO {
+public class WeatherResponseDTO {
     @JsonProperty("name")
     private String name;
 

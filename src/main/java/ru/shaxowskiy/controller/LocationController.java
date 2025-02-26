@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.shaxowskiy.models.dto.LocationDTO;
+import ru.shaxowskiy.models.dto.WeatherResponseDTO;
+import ru.shaxowskiy.models.dto.LocationResponseDTO;
 import ru.shaxowskiy.services.LocationService;
 import ru.shaxowskiy.services.OpenWeatherApiService;
+
+import java.util.List;
 
 @Controller
 public class LocationController {
@@ -26,14 +29,15 @@ public class LocationController {
 
     @GetMapping("/weather")
     public String getInfoAboutCity(@RequestParam String city, Model model) throws JsonProcessingException {
-        LocationDTO infoByCity = openWeatherApiService.getInfoByCity(city);
-        model.addAttribute("location", infoByCity);
+        List<LocationResponseDTO> infoByCity = openWeatherApiService.getInfoByCity(city);
+        System.out.println(infoByCity);
+        model.addAttribute("locations", infoByCity);
         model.addAttribute("history", locationService.findAll());
         return "weather-search";
     }
 
     @PostMapping("/welcome")
-    public String addCardWithWeather(@ModelAttribute("location") LocationDTO location) {
+    public String addCardWithWeather(@ModelAttribute("location") WeatherResponseDTO location) {
         locationService.save(location);
         System.out.println("Форма была отправлена!");
         return "redirect:/welcome";
