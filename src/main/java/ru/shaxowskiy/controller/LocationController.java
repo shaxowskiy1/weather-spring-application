@@ -29,17 +29,11 @@ public class LocationController {
 
     @GetMapping("/weather")
     public String getInfoAboutCity(@RequestParam String city, Model model) throws JsonProcessingException {
-        List<LocationResponseDTO> infoByCity = openWeatherApiService.getInfoByCity(city);
+        List<LocationResponseDTO> infoByCity = openWeatherApiService.getInfoAboutCityForName(city);
         System.out.println(infoByCity);
         model.addAttribute("locations", infoByCity);
-        model.addAttribute("history", locationService.findAll());
         return "weather-search";
     }
 
-    @PostMapping("/welcome")
-    public String addCardWithWeather(@ModelAttribute("location") WeatherResponseDTO location) {
-        locationService.save(location);
-        System.out.println("Форма была отправлена!");
-        return "redirect:/welcome";
-    }
+
 }

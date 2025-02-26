@@ -10,36 +10,27 @@
 <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
     <div th:each="location : ${locations}" style="margin-right: 20px;">
         <p th:text="${location.getName()}"></p>
-        <p th:text="${location.getLatitude()}"></p>
-        <p th:text="${location.getLongitude()}"></p>
-        <p th:text="${location.getState()}"></p>
+        <p th:text="${location.getLat()}"></p>
+        <p th:text="${location.getLon()}"></p>
         <p th:text="${location.getCountry()}"></p>
+
+        <form th:method="post" th:action="@{/welcome}" th:object="${location}">
+            <input type="hidden" name="name" th:value="${location.name}"/>
+            <input type="hidden" name="lat" th:value="${location.lat}"/>
+            <input type="hidden" name="lon" th:value="${location.lon}"/>
+            <input type="hidden" name="country" th:value="${location.country}"/>
+            <input type="hidden" name="state" th:value="${location.state}"/>
+
+            <div class="mt-auto">
+                <button type="submit" class="btn btn-primary w-100">Add</button>
+            </div>
+        </form>
     </div>
+
 </div>
 
 
 
-<form th:method="post" th:action="@{/welcome}" th:object="${location}">
-    <input type="hidden" name="name" th:value="${location.getName()}"/>
-    <input type="hidden" name="coord.lat" th:value="${location.getCoord().getLat()}"/>
-    <input type="hidden" name="coord.lon" th:value="${location.getCoord().getLon()}"/>
-    <input type="hidden" name="sys.country" th:value="${location.getSys().getCountry()}"/>
-    <li th:each="weather: ${location.getWeather()}">
-        <input type="hidden" name="weather.main" th:value="${weather.getMain()}"/>
-        <input type="hidden" name="weather.description" th:value="${weather.getDescription()}"/>
 
-    </li>
-
-    <div class="mt-auto">
-        <button type="submit" class="btn btn-primary w-100">Add</button>
-    </div>
-
-    <br>
-    <hr>
-    <h2>History added location:</h2>
-    <li th:each="historyLocation : ${history}">
-        <p th:text="'Name: ' + ${historyLocation.getName()}"></p>
-    </li>
-</form>
 </body>
 </html>

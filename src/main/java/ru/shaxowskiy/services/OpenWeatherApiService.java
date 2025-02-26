@@ -7,8 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import ru.shaxowskiy.models.Location;
 import ru.shaxowskiy.models.dto.LocationResponseDTO;
+import ru.shaxowskiy.models.dto.WeatherResponseDTO;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -17,7 +21,7 @@ public class OpenWeatherApiService {
     @Value("${API_KEY}")
     private String API_KEY;
     private final String SEARCH_LOC_OF_NAME = "http://api.openweathermap.org/geo/1.0/direct?";
-    private final String SEARCH_LOC_OF_COORD = "https://openweathermap.org/current#one";
+    private final String SEARCH_LOC_OF_COORD = "https://api.openweathermap.org/data/2.5/weather?";
 
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
@@ -28,10 +32,27 @@ public class OpenWeatherApiService {
         this.objectMapper = objectMapper;
     }
 
-    public List<LocationResponseDTO> getInfoByCity(String city) throws JsonProcessingException {
+    public List<LocationResponseDTO> getInfoAboutCityForName(String city) throws JsonProcessingException {
         String url = SEARCH_LOC_OF_NAME + "q=" + city + "&APPID=" + API_KEY + "&limit=" + 10;
         String response = restTemplate.getForObject(url, String.class);
-        List<LocationResponseDTO> locationDTO = objectMapper.readValue(response, new TypeReference<List<LocationResponseDTO>>() {});
-        return locationDTO;
+        return objectMapper.readValue(response, new TypeReference<List<LocationResponseDTO>>() {
+        });
+    }
+
+    public WeatherResponseDTO getInfoAboutCityForCoord(BigDecimal longitute, BigDecimal latitude) throws JsonProcessingException {
+        String url = SEARCH_LOC_OF_COORD + "&lat=" + latitude + "&lon=" + longitute + "&APPID=" + API_KEY;
+        String response = restTemplate.getForObject(url, String.class);
+        return objectMapper.readValue(response, WeatherResponseDTO.class);
+    }
+
+    public List<WeatherResponseDTO> getInfoAboutCityForCoord(List<Location> userLocations) throws JsonProcessingException {
+        List<WeatherResponseDTO> listOfCitiesWithWeather = new ArrayList<>();
+        for (Location location : userLocations) {
+            String url = SEARCH_LOC_OF_COORD + "&lat=" + location.getLatitude() + "&lon=" + location.getLongitude() + "&APPID=" + API_KEY;
+            String response = restTemplate.getForObject(url, String.class);
+            WeatherResponseDTO weatherResponseDTO = objectMapper.readValue(response, WeatherResponseDTO.class);
+            listOfCitiesWithWeather.add(weatherResponseDTO);
+        }
+        return listOfCitiesWithWeather;
     }
 }

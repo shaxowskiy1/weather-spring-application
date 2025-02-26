@@ -1,7 +1,6 @@
 package ru.shaxowskiy.repositories;
 
 import org.hibernate.Session;
-import org.hibernate.SessionBuilder;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -63,5 +62,13 @@ public class LocationRepository implements CrudRepository<Location, Long> {
     @Override
     public void delete(Long aLong) {
 
+    }
+
+
+    public List<Location> findByUser(User user) {
+        try(Session session = sessionFactory.openSession()){
+            Query query = session.createQuery("FROM Location WHERE user.id = :id", Location.class);
+            return query.setParameter("id", user.getId()).getResultList();
+        }
     }
 }
