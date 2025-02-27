@@ -13,6 +13,8 @@ import ru.shaxowskiy.models.dto.LocationResponseDTO;
 import ru.shaxowskiy.services.LocationService;
 import ru.shaxowskiy.services.OpenWeatherApiService;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Controller
@@ -34,6 +36,4 @@ public class LocationController {
         model.addAttribute("locations", infoByCity);
         return "weather-search";
     }
-
-
 }
