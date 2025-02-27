@@ -51,7 +51,7 @@ public class SessionService {
                 }
             }
         }
-        return null;
+        return Optional.empty();
     }
 
     public void delete(HttpServletRequest req) {
