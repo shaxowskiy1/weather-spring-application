@@ -7,16 +7,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import ru.shaxowskiy.models.dto.LocationDTO;
-import ru.shaxowskiy.repositories.CrudRepository;
 import ru.shaxowskiy.services.LocationService;
 import ru.shaxowskiy.services.SessionService;
-
 import javax.servlet.http.HttpServletRequest;
-import java.util.Arrays;
 
 @Slf4j
 @Controller
+@RequestMapping("/welcome")
 public class WelcomeController {
 
     private final SessionService sessionService;
@@ -28,13 +27,14 @@ public class WelcomeController {
         this.locationService = locationService;
     }
 
-    @GetMapping("/welcome")
+    @GetMapping
     public String welcome(HttpServletRequest req, Model model){
         model.addAttribute("user", sessionService.getUserFromSession(req).orElseThrow(null));
         return "welcome";
     }
     @PostMapping("/welcome")
     public String addCardWithWeather(@ModelAttribute("location") LocationDTO location) {
+        log.debug("Пришёл объект {}", location);
         log.info("Запрос POST успешно обработан /welcome");
         locationService.save(location);
         return "redirect:/welcome";

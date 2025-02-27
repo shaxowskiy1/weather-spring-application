@@ -21,8 +21,8 @@ public class LocationController {
     private final LocationService locationService;
 
     @Autowired
-    public LocationController(OpenWeatherApiService locationService, LocationService locationService1) {
-        this.openWeatherApiService = locationService;
+    public LocationController(OpenWeatherApiService openWeatherApiService, LocationService locationService1) {
+        this.openWeatherApiService = openWeatherApiService;
         this.locationService = locationService1;
     }
 
@@ -34,6 +34,5 @@ public class LocationController {
         model.addAttribute("history", locationService.findAll());
         return "weather-search";
     }
-
 
 }

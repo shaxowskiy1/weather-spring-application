@@ -18,7 +18,7 @@ CREATE TABLE Locations (
 );
 
 CREATE TABLE Sessions (
-                          id serial PRIMARY KEY,
+                          session_id varchar(36) PRIMARY KEY,
                           user_id INT NOT NULL,
                           expires_at TIMESTAMP NOT NULL,
                           CONSTRAINT fk_user
