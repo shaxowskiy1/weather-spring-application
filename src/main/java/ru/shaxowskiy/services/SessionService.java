@@ -32,7 +32,6 @@ public class SessionService {
         session.setUser(user);
         session.setExpiresAt(LocalDateTime.now().plusHours(1));
         sessionRepository.save(session);
-
         Cookie cookie = new Cookie("session_id", sessionId);
         cookie.setHttpOnly(true);
         cookie.setMaxAge(60 * 60 * 30);
@@ -42,11 +41,9 @@ public class SessionService {
 
     public Optional<User> getUserFromSession(HttpServletRequest req) {
         Cookie[] cookies = req.getCookies();
-        System.out.println("GET USER FROM SESS" + Arrays.toString(req.getCookies()));
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if ("session_id".equals(cookie.getName())) {
-                    System.out.println("THIS COOKIE IS" + cookie.getValue());
                     String sessionId = cookie.getValue();
                     Session session = sessionRepository.findById(sessionId);
                     if (session != null && session.getExpiresAt().isAfter(LocalDateTime.now())) {

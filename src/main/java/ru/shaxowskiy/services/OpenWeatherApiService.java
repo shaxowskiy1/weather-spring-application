@@ -30,7 +30,6 @@ public class OpenWeatherApiService {
         String url = SEARCH_LOC_OF_NAME + "q=" + city + "&APPID=" + API_KEY;
         String forObject = restTemplate.getForObject(url, String.class);
         LocationDTO locationDTO = objectMapper.readValue(forObject, LocationDTO.class);
-        System.out.println(locationDTO);
         return locationDTO;
     }
 }

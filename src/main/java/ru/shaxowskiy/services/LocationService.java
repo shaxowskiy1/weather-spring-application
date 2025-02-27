@@ -25,7 +25,7 @@ public class LocationService {
         location.setName(locationDTO.getName());
         location.setLatitude(locationDTO.getCoord().getLat());
         location.setLongitude(locationDTO.getCoord().getLon());
-//        location.setUser(new User());
+        location.setUser(new User(15L, "Sveta", "123"));
         locationRepository.save(location);
     }
 

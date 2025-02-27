@@ -20,8 +20,8 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-//    @ManyToOne
-//    private User user;
+    @ManyToOne
+    private User user;
     private BigDecimal latitude;
     private BigDecimal longitude;
 }

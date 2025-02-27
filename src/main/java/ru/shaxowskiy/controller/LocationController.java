@@ -1,6 +1,7 @@
 package ru.shaxowskiy.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +13,7 @@ import ru.shaxowskiy.models.dto.LocationDTO;
 import ru.shaxowskiy.services.LocationService;
 import ru.shaxowskiy.services.OpenWeatherApiService;
 
+@Slf4j
 @Controller
 public class LocationController {
 
@@ -26,16 +28,12 @@ public class LocationController {
 
     @GetMapping("/weather")
     public String getInfoAboutCity(@RequestParam String city, Model model) throws JsonProcessingException {
+        log.info("Запрос GET успешно обработан /weather");
         LocationDTO infoByCity = openWeatherApiService.getInfoByCity(city);
         model.addAttribute("location", infoByCity);
         model.addAttribute("history", locationService.findAll());
         return "weather-search";
     }
 
-    @PostMapping("/welcome")
-    public String addCardWithWeather(@ModelAttribute("location") LocationDTO location) {
-        locationService.save(location);
-        System.out.println("Форма была отправлена!");
-        return "redirect:/welcome";
-    }
+
 }
