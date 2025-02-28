@@ -1025,3 +1025,14 @@ Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
 2025-02-28 00:53:04.365 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
 2025-02-28 00:53:04.369 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
 2025-02-28 00:53:04.400 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2335 ms
+2025-02-28 18:23:41.444 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 18:23:41.999 [RMI TCP Connection(4)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 18:23:42.149 [RMI TCP Connection(4)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 18:23:42.534 [RMI TCP Connection(4)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 18:23:43.094 [RMI TCP Connection(4)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 18:23:43.719 [RMI TCP Connection(4)-127.0.0.1] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/spring-weather-app16 (PostgreSQL 16.3)
+2025-02-28 18:23:43.765 [RMI TCP Connection(4)-127.0.0.1] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.025s)
+2025-02-28 18:23:43.819 [RMI TCP Connection(4)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": << Empty Schema >>
+2025-02-28 18:23:43.841 [RMI TCP Connection(4)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "1 - create tables"
+2025-02-28 18:23:43.880 [RMI TCP Connection(4)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.021s)
+2025-02-28 18:23:43.905 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2459 ms
