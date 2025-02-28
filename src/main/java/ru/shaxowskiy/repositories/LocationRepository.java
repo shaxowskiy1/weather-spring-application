@@ -23,9 +23,7 @@ public class LocationRepository implements CrudRepository<Location, Long> {
 
     @Override
     public Location findById(Long locationId) {
-        Transaction transaction = null;
         try(Session session = sessionFactory.openSession()){
-            transaction = session.beginTransaction();
             Query query = session.createQuery("FROM Location WHERE id = :id");
             return (Location) query.setParameter("id", locationId).getSingleResult();
         }
@@ -33,9 +31,7 @@ public class LocationRepository implements CrudRepository<Location, Long> {
 
     @Override
     public List<Location> findAll(){
-        Transaction transaction = null;
         try(Session session = sessionFactory.openSession()){
-            transaction = session.beginTransaction();
             return session.createQuery("FROM Location").getResultList();
         }
     }
@@ -100,6 +96,7 @@ public class LocationRepository implements CrudRepository<Location, Long> {
         try(Session session = sessionFactory.openSession()){
             transaction = session.beginTransaction();
             Query query = session.createQuery("FROM Location WHERE user.id = :id", Location.class);
+            transaction.commit();
             return query.setParameter("id", user.getId()).getResultList();
         }
 
