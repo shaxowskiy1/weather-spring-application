@@ -191,3 +191,895 @@ Caused by: java.lang.IllegalArgumentException: Property 'driverClassName' must n
 2025-02-25 23:52:18.360 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
 2025-02-25 23:52:18.360 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
 2025-02-26 01:27:43.388 [Catalina-utility-1] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'sessionFactory': java.lang.BootstrapMethodError: java.lang.IllegalStateException: java.io.IOException: java.lang.reflect.InvocationTargetException
+2025-02-28 01:22:46.574 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 01:22:47.164 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 01:22:47.337 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 01:22:47.688 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 01:22:48.241 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 01:22:48.767 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2191 ms
+2025-02-28 01:23:04.326 [http-nio-8080-exec-1] INFO  r.s.controller.AuthController - GET-method register with form
+2025-02-28 01:23:17.102 [http-nio-8080-exec-2] INFO  r.s.controller.AuthController - POST-method with user:User(id=null, username=testlogic, password=testlogic)
+2025-02-28 01:23:17.314 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - insert into users (password, login) values (?, ?)
+2025-02-28 01:23:17.318 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [$2a$10$c97sqDe1WwlEIJnVwOVtp.gp1M3nobOROZFGEwpR5toknZ3VGjKCC]
+2025-02-28 01:23:17.318 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [testlogic]
+2025-02-28 01:23:20.178 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-02-28 01:23:20.199 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [testlogic]
+2025-02-28 01:23:20.302 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - insert into sessions (expires_at, user_id, session_id) values (?, ?, ?)
+2025-02-28 01:23:20.303 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2025-02-28T02:23:20.280922536]
+2025-02-28 01:23:20.304 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [2]
+2025-02-28 01:23:20.304 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [b1f47ab0-c024-4d7b-833f-ae387c5439c6]
+2025-02-28 01:23:20.350 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 01:23:20.350 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [b1f47ab0-c024-4d7b-833f-ae387c5439c6]
+2025-02-28 01:23:20.356 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 01:23:20.357 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-02-28 01:23:20.365 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 01:23:20.386 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-02-28 01:23:31.386 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 01:23:31.386 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [b1f47ab0-c024-4d7b-833f-ae387c5439c6]
+2025-02-28 01:23:31.388 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 01:23:31.389 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-02-28 01:23:31.411 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-02-28 01:23:31.412 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504461]
+2025-02-28 01:23:31.413 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6174943]
+2025-02-28 01:23:31.413 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Moscow]
+2025-02-28 01:23:31.413 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [2]
+2025-02-28 01:23:31.454 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 01:23:31.455 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [b1f47ab0-c024-4d7b-833f-ae387c5439c6]
+2025-02-28 01:23:31.457 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 01:23:31.458 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-02-28 01:23:31.461 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 01:23:31.488 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-02-28 01:23:31.493 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 01:23:31.494 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-02-28 01:23:46.577 [http-nio-8080-exec-2] INFO  r.s.controller.AuthController - GET-method register with form
+2025-02-28 01:23:53.113 [http-nio-8080-exec-4] INFO  r.s.controller.AuthController - POST-method with user:User(id=null, username=spavelin, password=spavelin)
+2025-02-28 01:23:53.230 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - insert into users (password, login) values (?, ?)
+2025-02-28 01:23:53.230 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [$2a$10$TiWnRIDlQfd6Syj5z0.aY.kWJj6AJsDvnfrD9MACUIe3TfMIE.YsS]
+2025-02-28 01:23:53.230 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [spavelin]
+2025-02-28 01:23:55.362 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-02-28 01:23:55.403 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [spavelin]
+2025-02-28 01:23:55.507 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - insert into sessions (expires_at, user_id, session_id) values (?, ?, ?)
+2025-02-28 01:23:55.507 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2025-02-28T02:23:55.489071435]
+2025-02-28 01:23:55.507 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [3]
+2025-02-28 01:23:55.507 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [03578ddb-bf16-4b88-ab29-3ce1182491bb]
+2025-02-28 01:23:55.545 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 01:23:55.545 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [03578ddb-bf16-4b88-ab29-3ce1182491bb]
+2025-02-28 01:23:55.547 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 01:23:55.547 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-02-28 01:23:55.550 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 01:23:55.569 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-02-28 01:24:10.158 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 01:24:10.159 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [03578ddb-bf16-4b88-ab29-3ce1182491bb]
+2025-02-28 01:24:10.161 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 01:24:10.161 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-02-28 01:24:10.180 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-02-28 01:24:10.180 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [31.0661965]
+2025-02-28 01:24:10.180 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [118.9202989]
+2025-02-28 01:24:10.180 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Mo]
+2025-02-28 01:24:10.180 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [3]
+2025-02-28 01:24:10.216 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 01:24:10.217 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [03578ddb-bf16-4b88-ab29-3ce1182491bb]
+2025-02-28 01:24:10.219 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 01:24:10.219 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-02-28 01:24:10.221 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 01:24:10.248 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-02-28 01:24:10.250 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 01:24:10.250 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-02-28 01:24:14.001 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 01:24:14.001 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [03578ddb-bf16-4b88-ab29-3ce1182491bb]
+2025-02-28 01:24:14.003 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 01:24:14.003 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-02-28 01:24:14.028 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-02-28 01:24:14.028 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [46.7323875]
+2025-02-28 01:24:14.028 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [-117.0001651]
+2025-02-28 01:24:14.028 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Moscow]
+2025-02-28 01:24:14.029 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [3]
+2025-02-28 01:24:14.068 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 01:24:14.068 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [03578ddb-bf16-4b88-ab29-3ce1182491bb]
+2025-02-28 01:24:14.071 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 01:24:14.071 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-02-28 01:24:14.073 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 01:24:14.097 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-02-28 01:24:14.099 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 01:24:14.099 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-02-28 01:26:32.905 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 01:26:33.496 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 01:26:33.717 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 01:26:34.108 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 01:26:34.858 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 01:26:35.503 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2596 ms
+2025-02-28 03:20:32.339 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 03:20:32.947 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 03:20:33.106 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 03:20:33.449 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 03:20:34.013 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 03:20:34.537 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2196 ms
+2025-02-28 03:20:47.540 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:20:47.542 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [03578ddb-bf16-4b88-ab29-3ce1182491bb]
+2025-02-28 03:20:47.571 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:20:47.573 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-02-28 03:21:00.542 [http-nio-8080-exec-2] INFO  r.s.controller.AuthController - GET-method register with form
+2025-02-28 03:21:07.681 [http-nio-8080-exec-3] INFO  r.s.controller.AuthController - POST-method with user:User(id=null, username=testpage, password=testpage)
+2025-02-28 03:21:07.832 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - insert into users (password, login) values (?, ?)
+2025-02-28 03:21:07.832 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [$2a$10$2SsakW9s5strV3cmf76WRu3GachNjRW7TKcvbRF5NMicKC1SIhlau]
+2025-02-28 03:21:07.832 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [testpage]
+2025-02-28 03:21:12.054 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-02-28 03:21:12.078 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [testpage]
+2025-02-28 03:21:12.180 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - insert into sessions (expires_at, user_id, session_id) values (?, ?, ?)
+2025-02-28 03:21:12.181 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2025-02-28T04:21:12.158307143]
+2025-02-28 03:21:12.182 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [4]
+2025-02-28 03:21:12.182 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:21:12.222 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:21:12.223 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:21:12.225 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:21:12.226 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:21:12.257 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 03:21:12.257 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:21:23.366 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:21:23.366 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:21:23.368 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:21:23.368 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:21:23.388 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-02-28 03:21:23.389 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504461]
+2025-02-28 03:21:23.389 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6174943]
+2025-02-28 03:21:23.389 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Moscow]
+2025-02-28 03:21:23.389 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [4]
+2025-02-28 03:21:23.434 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:21:23.435 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:21:23.438 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:21:23.439 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:21:23.470 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 03:21:23.471 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:21:23.473 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:21:23.474 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:21:23.553 [http-nio-8080-exec-10] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-8080-exec-10] Exception processing template "welcome": Exception evaluating SpringEL expression: "weatherOfCity.getId()" (template: "welcome" - line 29, col 61)
+org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "weatherOfCity.getId()" (template: "welcome" - line 29, col 61)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.AdditionExpression.executeAddition(AdditionExpression.java:96)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:62)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.AdditionExpression.executeAddition(AdditionExpression.java:89)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:62)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.StandardDOMEventAttributeTagProcessor.doProcess(StandardDOMEventAttributeTagProcessor.java:214)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:368)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:222)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.CloseElementTag.beHandled(CloseElementTag.java:139)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:592)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getId() cannot be found on type ru.shaxowskiy.models.dto.WeatherResponseDTO
+	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
+	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
+	at org.springframework.expression.spel.ast.MethodReference$MethodValueRef.getValue(MethodReference.java:386)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:330)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265)
+	... 63 common frames omitted
+2025-02-28 03:22:02.244 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 03:22:02.965 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 03:22:03.114 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 03:22:03.461 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 03:22:04.021 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 03:22:04.493 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2244 ms
+2025-02-28 03:22:09.343 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:22:09.345 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:22:09.367 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:22:09.368 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:22:09.442 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-02-28 03:22:09.443 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504461]
+2025-02-28 03:22:09.444 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6174943]
+2025-02-28 03:22:09.445 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Moscow]
+2025-02-28 03:22:09.445 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [4]
+2025-02-28 03:22:09.517 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:22:09.517 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:22:09.521 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:22:09.522 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:22:09.556 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 03:22:09.556 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:22:09.558 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:22:09.559 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:22:09.705 [http-nio-8080-exec-3] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-8080-exec-3] Exception processing template "welcome": Only variable expressions returning numbers or booleans are allowed in this context, any other datatypes are not trusted in the context of this expression, including Strings or any other object that could be rendered as a text literal. A typical case is HTML attributes for event handlers (e.g. "onload"), in which textual data from variables should better be output to "data-*" attributes and then read from the event handler. (template: "welcome" - line 29, col 61)
+org.thymeleaf.exceptions.TemplateProcessingException: Only variable expressions returning numbers or booleans are allowed in this context, any other datatypes are not trusted in the context of this expression, including Strings or any other object that could be rendered as a text literal. A typical case is HTML attributes for event handlers (e.g. "onload"), in which textual data from variables should better be output to "data-*" attributes and then read from the event handler. (template: "welcome" - line 29, col 61)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:181)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.AdditionExpression.executeAddition(AdditionExpression.java:96)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:62)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.AdditionExpression.executeAddition(AdditionExpression.java:89)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:62)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.StandardDOMEventAttributeTagProcessor.doProcess(StandardDOMEventAttributeTagProcessor.java:214)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:368)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:222)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.CloseElementTag.beHandled(CloseElementTag.java:139)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2025-02-28 03:24:08.725 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 03:24:09.331 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 03:24:09.519 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 03:24:09.953 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 03:24:10.606 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 03:24:11.186 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2459 ms
+2025-02-28 03:24:22.658 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:24:22.662 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:24:22.690 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:24:22.691 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:24:22.739 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-02-28 03:24:22.740 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504461]
+2025-02-28 03:24:22.740 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6174943]
+2025-02-28 03:24:22.740 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Moscow]
+2025-02-28 03:24:22.740 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [4]
+2025-02-28 03:24:22.801 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:24:22.802 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:24:22.804 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:24:22.805 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:24:22.843 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 03:24:22.844 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:24:22.846 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:24:22.847 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:24:23.076 [http-nio-8080-exec-3] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-8080-exec-3] Exception processing template "welcome": Exception evaluating SpringEL expression: "weatherOfCity.getId()" (template: "welcome" - line 32, col 56)
+org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "weatherOfCity.getId()" (template: "welcome" - line 32, col 56)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.StandaloneElementTag.beHandled(StandaloneElementTag.java:228)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:368)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:222)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.CloseElementTag.beHandled(CloseElementTag.java:139)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getId() cannot be found on type ru.shaxowskiy.models.dto.WeatherResponseDTO
+	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
+	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
+	at org.springframework.expression.spel.ast.MethodReference$MethodValueRef.getValue(MethodReference.java:386)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:330)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265)
+	... 57 common frames omitted
+2025-02-28 03:25:09.892 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 03:25:10.460 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 03:25:10.639 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 03:25:11.055 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 03:25:11.672 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 03:25:12.228 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2335 ms
+2025-02-28 03:25:23.617 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:25:23.619 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:25:23.637 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:25:23.638 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:25:23.716 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-02-28 03:25:23.717 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [52.4238936]
+2025-02-28 03:25:23.719 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [31.0131698]
+2025-02-28 03:25:23.719 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Homyel]
+2025-02-28 03:25:23.720 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [4]
+2025-02-28 03:25:23.789 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:25:23.790 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:25:23.793 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:25:23.794 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:25:23.830 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 03:25:23.831 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:25:23.834 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:25:23.834 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:25:24.100 [http-nio-8080-exec-3] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-8080-exec-3] Exception processing template "welcome": Exception evaluating SpringEL expression: "weatherOfCity.getId()" (template: "welcome" - line 42, col 48)
+org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "weatherOfCity.getId()" (template: "welcome" - line 42, col 48)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.StandaloneElementTag.beHandled(StandaloneElementTag.java:228)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:368)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:222)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.CloseElementTag.beHandled(CloseElementTag.java:139)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1004E: Method call: Method getId() cannot be found on type ru.shaxowskiy.models.dto.WeatherResponseDTO
+	at org.springframework.expression.spel.ast.MethodReference.findAccessorForMethod(MethodReference.java:226)
+	at org.springframework.expression.spel.ast.MethodReference.getValueInternal(MethodReference.java:135)
+	at org.springframework.expression.spel.ast.MethodReference.access$000(MethodReference.java:55)
+	at org.springframework.expression.spel.ast.MethodReference$MethodValueRef.getValue(MethodReference.java:386)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:330)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265)
+	... 57 common frames omitted
+2025-02-28 03:27:54.939 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 03:27:55.488 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 03:27:55.641 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 03:27:55.990 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 03:27:56.553 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 03:27:57.045 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2103 ms
+2025-02-28 03:28:02.673 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:28:02.676 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:28:02.692 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:28:02.693 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:28:02.750 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-02-28 03:28:02.752 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504461]
+2025-02-28 03:28:02.753 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6174943]
+2025-02-28 03:28:02.754 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Moscow]
+2025-02-28 03:28:02.754 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [4]
+2025-02-28 03:28:02.841 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:28:02.842 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:28:02.846 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:28:02.847 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:28:02.908 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 03:28:02.909 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:28:02.913 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:28:02.914 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:28:18.136 [http-nio-8080-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2025-02-28 03:28:59.786 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 03:29:00.290 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 03:29:00.450 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 03:29:00.794 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 03:29:01.351 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 03:29:01.820 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2032 ms
+2025-02-28 03:29:23.780 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:29:23.782 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:29:23.800 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:29:23.801 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:29:23.858 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-02-28 03:29:23.860 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [59.938732]
+2025-02-28 03:29:23.860 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [30.316229]
+2025-02-28 03:29:23.861 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Saint Petersburg]
+2025-02-28 03:29:23.861 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [4]
+2025-02-28 03:29:23.933 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:29:23.933 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:29:23.937 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:29:23.938 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:29:23.977 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 03:29:23.977 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:29:23.981 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:29:23.982 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:30:18.785 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 03:30:19.436 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 03:30:19.636 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 03:30:20.091 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 03:30:20.884 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 03:30:21.491 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2703 ms
+2025-02-28 03:32:34.047 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 03:32:34.813 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 03:32:35.024 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 03:32:35.475 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 03:32:36.170 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 03:32:36.789 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2740 ms
+2025-02-28 03:33:19.942 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 03:33:19.970 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504]
+2025-02-28 03:33:19.977 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [55.7504]
+2025-02-28 03:34:30.912 [http-nio-8080-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'city' is not present]
+2025-02-28 03:34:36.777 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 03:34:37.410 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 03:34:37.586 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 03:34:38.002 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 03:34:38.660 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 03:34:39.186 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2406 ms
+2025-02-28 03:35:09.259 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 03:35:09.263 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504]
+2025-02-28 03:35:09.264 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [55.7504]
+2025-02-28 03:35:59.086 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 03:35:59.686 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 03:35:59.835 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 03:36:00.164 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 03:36:00.833 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 03:36:01.284 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2196 ms
+2025-02-28 03:36:23.268 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 03:36:23.806 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 03:36:23.978 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 03:36:24.312 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 03:36:24.943 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 03:36:25.433 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2164 ms
+2025-02-28 03:36:32.883 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:36:32.886 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:36:32.906 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:36:32.907 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:36:32.950 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 03:36:32.950 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:36:32.954 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:36:32.954 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:36:34.135 [http-nio-8080-exec-1] ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-8080-exec-1] Exception processing template "welcome": Exception evaluating SpringEL expression: "weatherOfCity.getCoord().getLon()()" (template: "welcome" - line 55, col 23)
+org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "weatherOfCity.getCoord().getLon()()" (template: "welcome" - line 55, col 23)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.processIterationModel(IteratedGatheringModelProcessable.java:368)
+	at org.thymeleaf.engine.IteratedGatheringModelProcessable.process(IteratedGatheringModelProcessable.java:222)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.CloseElementTag.beHandled(CloseElementTag.java:139)
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:199)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:168)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:144)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:168)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:346)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:396)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:937)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.springframework.expression.spel.SpelParseException: EL1041E: After parsing a valid expression, there is still more data in the expression: 'lparen(()'
+	at org.springframework.expression.spel.standard.InternalSpelExpressionParser.doParseExpression(InternalSpelExpressionParser.java:135)
+	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:61)
+	at org.springframework.expression.spel.standard.SpelExpressionParser.doParseExpression(SpelExpressionParser.java:33)
+	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:52)
+	at org.springframework.expression.common.TemplateAwareExpressionParser.parseExpression(TemplateAwareExpressionParser.java:43)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.getExpression(SPELVariableExpressionEvaluator.java:373)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.obtainComputedSpelExpression(SPELVariableExpressionEvaluator.java:321)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:182)
+	... 57 common frames omitted
+2025-02-28 03:37:21.308 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 03:37:21.917 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 03:37:22.086 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 03:37:22.419 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 03:37:23.042 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 03:37:23.547 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2237 ms
+2025-02-28 03:37:27.130 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 03:37:27.132 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 03:37:27.161 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:37:27.162 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:37:27.215 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 03:37:27.216 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:37:27.219 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 03:37:27.219 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 03:37:39.780 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 03:37:39.781 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504]
+2025-02-28 03:37:39.782 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6175]
+2025-02-28 03:37:39.799 [http-nio-8080-exec-3] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'city' is not present]
+2025-02-28 04:13:16.652 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 04:13:16.653 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504]
+2025-02-28 04:13:16.653 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6175]
+2025-02-28 04:13:16.661 [http-nio-8080-exec-6] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'city' is not present]
+2025-02-28 04:14:10.608 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 04:14:11.119 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 04:14:11.264 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 04:14:11.603 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 04:14:12.168 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 04:14:12.599 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1989 ms
+2025-02-28 04:14:15.895 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 04:14:15.899 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504]
+2025-02-28 04:14:15.899 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6175]
+2025-02-28 04:14:15.988 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 04:14:15.989 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 04:14:16.007 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:14:16.008 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:14:16.050 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 04:14:16.051 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:14:16.054 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:14:16.055 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:14:19.961 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 04:14:19.961 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504]
+2025-02-28 04:14:19.961 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6175]
+2025-02-28 04:14:19.989 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 04:14:19.990 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 04:14:19.993 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:14:19.993 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:14:20.020 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 04:14:20.020 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:14:20.022 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:14:20.023 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:14:25.984 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 04:14:25.985 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504]
+2025-02-28 04:14:25.985 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6175]
+2025-02-28 04:14:26.018 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 04:14:26.019 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 04:14:26.021 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:14:26.022 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:14:26.052 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 04:14:26.052 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:14:26.055 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:14:26.055 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:16:07.736 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 04:16:07.736 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 04:16:07.738 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:16:07.739 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:16:07.760 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 04:16:07.760 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:16:07.762 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:16:07.763 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:16:10.101 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 04:16:10.101 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504]
+2025-02-28 04:16:10.102 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6175]
+2025-02-28 04:16:10.127 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 04:16:10.127 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 04:16:10.129 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:16:10.129 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:16:10.152 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 04:16:10.152 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:16:10.156 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:16:10.156 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:13.995 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 04:18:13.995 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [59.9387]
+2025-02-28 04:18:13.995 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [30.3162]
+2025-02-28 04:18:14.020 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 04:18:14.021 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 04:18:14.024 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:18:14.024 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:14.047 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 04:18:14.048 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:14.052 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:18:14.053 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:17.657 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 04:18:17.657 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [59.9387]
+2025-02-28 04:18:17.657 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [30.3162]
+2025-02-28 04:18:17.682 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 04:18:17.682 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 04:18:17.684 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:18:17.685 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:17.708 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 04:18:17.708 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:17.710 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:18:17.711 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:20.456 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 04:18:20.456 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [59.9387]
+2025-02-28 04:18:20.456 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [30.3162]
+2025-02-28 04:18:20.481 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 04:18:20.482 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 04:18:20.483 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:18:20.484 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:20.509 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 04:18:20.509 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:20.511 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:18:20.511 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:25.450 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 04:18:25.450 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [59.9387]
+2025-02-28 04:18:25.450 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [30.3162]
+2025-02-28 04:18:25.472 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 04:18:25.472 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 04:18:25.474 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:18:25.474 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:25.497 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 04:18:25.497 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:25.499 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:18:25.499 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:35.540 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 04:18:35.540 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 04:18:35.542 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:18:35.542 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:35.570 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-02-28 04:18:35.570 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [56.839104]
+2025-02-28 04:18:35.570 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [60.60825]
+2025-02-28 04:18:35.570 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Yekaterinburg]
+2025-02-28 04:18:35.571 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [4]
+2025-02-28 04:18:35.612 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 04:18:35.613 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 04:18:35.615 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:18:35.616 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:35.644 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 04:18:35.644 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:35.646 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:18:35.647 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:38.759 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 04:18:38.759 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [56.8391]
+2025-02-28 04:18:38.759 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [60.6083]
+2025-02-28 04:18:38.785 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 04:18:38.786 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [3ed955a5-1138-4e24-aac4-b6c11fd09133]
+2025-02-28 04:18:38.788 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:18:38.788 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:38.813 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 04:18:38.814 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 04:18:38.816 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 04:18:38.817 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 14:41:06.151 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 14:41:06.719 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 14:41:06.962 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 14:41:07.429 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 14:41:07.999 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 14:41:08.499 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2345 ms
+2025-02-28 14:41:24.714 [http-nio-8080-exec-1] INFO  r.s.controller.AuthController - GET-method register with form
+2025-02-28 14:41:28.855 [http-nio-8080-exec-3] WARN  o.s.web.servlet.PageNotFound - No mapping for GET /favicon.ico
+2025-02-28 14:41:41.423 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-02-28 14:41:41.468 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [testpage]
+2025-02-28 14:41:41.636 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - insert into sessions (expires_at, user_id, session_id) values (?, ?, ?)
+2025-02-28 14:41:41.638 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2025-02-28T15:41:41.597180375]
+2025-02-28 14:41:41.639 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [4]
+2025-02-28 14:41:41.639 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [e4e8c86b-6632-4b26-b5f7-0c43a9e29823]
+2025-02-28 14:41:41.700 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 14:41:41.700 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [e4e8c86b-6632-4b26-b5f7-0c43a9e29823]
+2025-02-28 14:41:41.707 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 14:41:41.708 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 14:41:41.737 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 14:41:41.738 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 14:41:41.742 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 14:41:41.742 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 14:41:46.002 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 14:41:46.003 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504]
+2025-02-28 14:41:46.004 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6175]
+2025-02-28 14:41:46.042 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 14:41:46.042 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [e4e8c86b-6632-4b26-b5f7-0c43a9e29823]
+2025-02-28 14:41:46.044 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 14:41:46.045 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 14:41:46.072 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 14:41:46.073 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 14:41:46.075 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 14:41:46.076 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 14:41:53.151 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 14:41:53.151 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [59.9387]
+2025-02-28 14:41:53.151 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [30.3162]
+2025-02-28 14:41:53.176 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 14:41:53.176 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [e4e8c86b-6632-4b26-b5f7-0c43a9e29823]
+2025-02-28 14:41:53.178 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 14:41:53.179 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 14:41:53.206 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 14:41:53.207 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 14:41:53.210 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 14:41:53.210 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 14:43:06.840 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 14:43:06.841 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [59.9387]
+2025-02-28 14:43:06.841 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [30.3162]
+2025-02-28 14:43:06.867 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 14:43:06.867 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [e4e8c86b-6632-4b26-b5f7-0c43a9e29823]
+2025-02-28 14:43:06.869 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 14:43:06.869 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 14:43:06.892 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 14:43:06.893 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 14:43:06.896 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 14:43:06.896 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 18:11:45.459 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-02-28 18:11:46.220 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-02-28 18:11:46.374 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-02-28 18:11:46.800 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-02-28 18:11:47.507 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-02-28 18:11:47.969 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2507 ms
+2025-02-28 18:11:50.424 [http-nio-8080-exec-1] INFO  r.s.controller.AuthController - GET-method register with form
+2025-02-28 18:12:03.866 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-02-28 18:12:03.915 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [testpage]
+2025-02-28 18:12:04.091 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - insert into sessions (expires_at, user_id, session_id) values (?, ?, ?)
+2025-02-28 18:12:04.093 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2025-02-28T19:12:04.044663881]
+2025-02-28 18:12:04.094 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [4]
+2025-02-28 18:12:04.095 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [422cf9eb-718e-4e54-9091-f85dd17fbcdf]
+2025-02-28 18:12:04.156 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 18:12:04.157 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [422cf9eb-718e-4e54-9091-f85dd17fbcdf]
+2025-02-28 18:12:04.166 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 18:12:04.166 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 18:12:04.199 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 18:12:04.200 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 18:12:04.203 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 18:12:04.203 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 18:12:16.312 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - delete from locations where latitude=? and longitude=?
+2025-02-28 18:12:16.313 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504]
+2025-02-28 18:12:16.314 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6175]
+2025-02-28 18:12:16.357 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-02-28 18:12:16.358 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [422cf9eb-718e-4e54-9091-f85dd17fbcdf]
+2025-02-28 18:12:16.361 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 18:12:16.362 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 18:12:16.397 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-02-28 18:12:16.397 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-02-28 18:12:16.401 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-02-28 18:12:16.401 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]

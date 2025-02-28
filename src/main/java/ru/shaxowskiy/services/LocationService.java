@@ -9,6 +9,7 @@ import ru.shaxowskiy.models.dto.LocationResponseDTO;
 import ru.shaxowskiy.models.dto.WeatherResponseDTO;
 import ru.shaxowskiy.repositories.LocationRepository;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,5 +42,8 @@ public class LocationService {
 
     public List<Location> findByUser(User user) {
         return locationRepository.findByUser(user);
+    }
+    public void delete(BigDecimal lat, BigDecimal lon){
+        locationRepository.delete(lat, lon);
     }
 }

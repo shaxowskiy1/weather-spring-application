@@ -10,16 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import ru.shaxowskiy.exception.UserNotFoundException;
 import ru.shaxowskiy.models.User;
 import ru.shaxowskiy.models.dto.LocationResponseDTO;
-import ru.shaxowskiy.models.dto.WeatherResponseDTO;
-import ru.shaxowskiy.repositories.CrudRepository;
 import ru.shaxowskiy.services.LocationService;
 import ru.shaxowskiy.services.OpenWeatherApiService;
 import ru.shaxowskiy.services.SessionService;
-
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
-import java.util.Arrays;
-import java.util.Optional;
 
 @Controller
 public class WelcomeController {
