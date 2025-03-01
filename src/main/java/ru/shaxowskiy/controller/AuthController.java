@@ -34,7 +34,6 @@ public class AuthController {
     @GetMapping("/register")
     public String register(Model model){
         model.addAttribute("user", new User());
-        System.out.println("GET-method register with form");
         log.info("GET-method register with form");
         return "register";
     }
@@ -45,9 +44,7 @@ public class AuthController {
         if(bindingResult.hasErrors()){
             return "redirect:/register";
         }
-        System.out.println("POST-method register with form");
-        log.info("POST-method with user:{}", user);
-        userService.addUser(user);
+        userService.registerUser(user);
         return "redirect:login";
     }
     @GetMapping("/login")

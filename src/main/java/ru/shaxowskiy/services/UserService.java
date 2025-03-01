@@ -18,16 +18,14 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void addUser(User user){
+    public void registerUser(User user){
         String password = user.getPassword();
         user.setPassword(BCrypt.hashpw(password, BCrypt.gensalt()));
         userRepository.save(user);
     }
 
     public User findByUsername(String username){
-
         User user = userRepository.findByUsername(username);
-        System.out.println("Found user" + user.toString());
         return user;
     }
 }
