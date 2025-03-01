@@ -1309,3 +1309,69 @@ Caused by: org.springframework.expression.spel.SpelParseException: EL1041E: Afte
 2025-03-01 21:33:15.340 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [15]
 2025-03-01 21:33:15.342 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
 2025-03-01 21:33:15.342 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [15]
+2025-03-01 22:21:39.734 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-01 22:21:40.224 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-03-01 22:21:40.393 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-01 22:21:40.749 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-03-01 22:21:41.260 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-01 22:21:41.686 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1950 ms
+2025-03-01 22:21:42.118 [http-nio-8080-exec-1] INFO  r.s.controller.AuthController - GET-method register with form
+2025-03-01 22:21:48.974 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - insert into users (password, login) values (?, ?)
+2025-03-01 22:21:48.976 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [$2a$10$m7WAIYX24GISt2PMnG4n0utT0129tmTTzfIdjDfq.Wl.Fz1QfRuc2]
+2025-03-01 22:21:48.977 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [1]
+2025-03-01 23:25:44.846 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-01 23:25:45.420 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-03-01 23:25:45.581 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-01 23:25:45.947 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-03-01 23:25:46.535 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-01 23:25:46.953 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2106 ms
+2025-03-01 23:25:48.797 [http-nio-8080-exec-1] INFO  r.s.controller.AuthController - GET-method register with form
+2025-03-01 23:26:01.309 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - insert into users (password, login) values (?, ?)
+2025-03-01 23:26:01.312 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [$2a$10$C4hBzD/yUkAuIdZBb3RbceGYC9cM2CFNEQ2TVEOdMWSoI7x5ZHzWe]
+2025-03-01 23:26:01.312 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [1]
+2025-03-01 23:38:55.757 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-01 23:38:56.252 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-03-01 23:38:56.387 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-01 23:38:56.703 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-03-01 23:38:57.222 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-01 23:38:57.749 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1990 ms
+2025-03-01 23:39:01.880 [http-nio-8080-exec-2] INFO  r.s.controller.AuthController - GET-method register with form
+2025-03-01 23:39:06.070 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - insert into users (password, login) values (?, ?)
+2025-03-01 23:39:06.072 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [$2a$10$ffPDbNk6iRc7XpqoFjmEQ.pO24J8/JP9JJRDyFQ5V8nXSjI2NMkkm]
+2025-03-01 23:39:06.073 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [1]
+2025-03-01 23:47:40.853 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-01 23:47:41.523 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-03-01 23:47:41.697 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-01 23:47:42.116 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-03-01 23:47:42.769 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-01 23:47:43.282 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2427 ms
+2025-03-02 02:08:44.086 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-02 02:08:44.577 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-03-02 02:08:44.716 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-02 02:08:45.051 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-03-02 02:08:45.641 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-02 02:08:46.123 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2035 ms
+2025-03-02 02:08:57.074 [http-nio-8080-exec-1] INFO  r.s.controller.AuthController - GET-method register with form
+2025-03-02 02:09:03.179 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - insert into users (password, login) values (?, ?)
+2025-03-02 02:09:03.182 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [$2a$10$Ab2AcN7VBfqDCmycRGzJ2e92v7JNhq4OkVHyQNIPYGn3uceX2HKu6]
+2025-03-02 02:09:03.183 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [1]
+2025-03-02 02:17:30.893 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-02 02:17:31.450 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-03-02 02:17:31.615 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-02 02:17:32.034 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-03-02 02:17:32.617 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-02 02:17:33.093 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2198 ms
+2025-03-02 02:17:42.438 [http-nio-8080-exec-1] INFO  r.s.controller.AuthController - GET-method register with form
+2025-03-02 02:17:47.948 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - insert into users (password, login) values (?, ?)
+2025-03-02 02:17:47.950 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [$2a$10$y18W2iZ1Z2CqtZk51wCcAu6cD7dw1K4hnPsDKl/ta9wfz.WLQFlu6]
+2025-03-02 02:17:47.951 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [1]
+2025-03-02 02:18:43.277 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-02 02:18:43.781 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-03-02 02:18:43.919 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-02 02:18:44.225 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-03-02 02:18:44.818 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-02 02:18:45.329 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2050 ms
+2025-03-02 02:18:50.730 [http-nio-8080-exec-1] INFO  r.s.controller.AuthController - GET-method register with form
+2025-03-02 02:18:54.265 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - insert into users (password, login) values (?, ?)
+2025-03-02 02:18:54.268 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [$2a$10$B8OLj7l6vL5BgNnsMlEAdOSbml5BSQEZpZOBq6zHMYCXCIUz4NlBu]
+2025-03-02 02:18:54.269 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [1]

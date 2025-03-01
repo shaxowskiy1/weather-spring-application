@@ -1,6 +1,5 @@
 package ru.shaxowskiy.controller;
 
-import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,12 +8,14 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.shaxowskiy.models.User;
+import ru.shaxowskiy.models.dto.UserDTO;
 import ru.shaxowskiy.services.SessionService;
 import ru.shaxowskiy.services.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.util.Arrays;
 
 @Slf4j
@@ -33,20 +34,22 @@ public class AuthController {
 
     @GetMapping("/register")
     public String register(Model model){
-        model.addAttribute("user", new User());
+        model.addAttribute("user", new UserDTO());
         log.info("GET-method register with form");
         return "register";
     }
 
     @PostMapping("/register")
-    public String registration(@ModelAttribute("user") @Valid User user,
+    public String registration(@ModelAttribute("user") @Valid UserDTO userDTO,
                                BindingResult bindingResult){
         if(bindingResult.hasErrors()){
-            return "redirect:/register";
+            System.out.println(bindingResult.getAllErrors());
+            return "register";
         }
-        userService.registerUser(user);
+        userService.registerUser(userDTO);
         return "redirect:login";
     }
+
     @GetMapping("/login")
     public String login(){
         return "login";
@@ -70,7 +73,6 @@ public class AuthController {
 
     @PostMapping("/logout")
     public String logout(HttpServletRequest req){
-        System.out.println(Arrays.toString(req.getCookies()));
         sessionService.delete(req);
         return "redirect:/auth/login";
     }
