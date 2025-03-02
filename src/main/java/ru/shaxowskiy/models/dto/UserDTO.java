@@ -13,7 +13,7 @@ public class UserDTO {
     @NotEmpty(message = "Password should not be empty")
     @Size(min = 5, max = 15, message = "Password should be between 5 and 15 characters")
     private String password;
-//    @NotEmpty(message = "Password confirm not be empty")
-//    @Size(min = 5, max = 15, message = "Password should be between 5 and 15 characters")
-//    private String confirmPassword;
+    @NotEmpty(message = "Password confirm not be empty")
+    @Size(min = 5, max = 15, message = "Password should be between 5 and 15 characters")
+    private String confirmPassword;
 }

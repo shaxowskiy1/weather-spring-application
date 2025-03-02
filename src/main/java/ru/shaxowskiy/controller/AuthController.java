@@ -11,23 +11,27 @@ import ru.shaxowskiy.models.User;
 import ru.shaxowskiy.models.dto.UserDTO;
 import ru.shaxowskiy.services.SessionService;
 import ru.shaxowskiy.services.UserService;
+import ru.shaxowskiy.util.PasswordIsNotConfirmValidator;
+import ru.shaxowskiy.util.UsernameAlreadyTakenValidator;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.util.Arrays;
 
 @Slf4j
 @Controller
 @RequestMapping("/auth")
 public class AuthController {
 
+    private final PasswordIsNotConfirmValidator passwordIsNotConfirmValidator;
+    private final UsernameAlreadyTakenValidator usernameAlreadyTakenValidator;
     private final SessionService sessionService;
     private final UserService userService;
 
     @Autowired
-    public AuthController(SessionService sessionService, UserService userService) {
+    public AuthController(PasswordIsNotConfirmValidator passwordIsNotConfirmValidator, UsernameAlreadyTakenValidator usernameAlreadyTakenValidator, SessionService sessionService, UserService userService) {
+        this.passwordIsNotConfirmValidator = passwordIsNotConfirmValidator;
+        this.usernameAlreadyTakenValidator = usernameAlreadyTakenValidator;
         this.sessionService = sessionService;
         this.userService = userService;
     }
@@ -42,8 +46,9 @@ public class AuthController {
     @PostMapping("/register")
     public String registration(@ModelAttribute("user") @Valid UserDTO userDTO,
                                BindingResult bindingResult){
+        passwordIsNotConfirmValidator.validate(userDTO, bindingResult);
+        usernameAlreadyTakenValidator.validate(userDTO, bindingResult);
         if(bindingResult.hasErrors()){
-            System.out.println(bindingResult.getAllErrors());
             return "register";
         }
         userService.registerUser(userDTO);
