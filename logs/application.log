@@ -1036,3 +1036,46 @@ Need more flexibility with validation rules? Learn more: https://rd.gt/3AbJUZE
 2025-02-28 18:23:43.841 [RMI TCP Connection(4)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "1 - create tables"
 2025-02-28 18:23:43.880 [RMI TCP Connection(4)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.021s)
 2025-02-28 18:23:43.905 [RMI TCP Connection(4)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2459 ms
+2025-03-02 17:41:40.776 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-02 17:41:41.317 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-03-02 17:41:41.483 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-02 17:41:41.802 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-03-02 17:41:42.316 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-02 17:41:42.928 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/spring-weather-app16 (PostgreSQL 16.3)
+2025-03-02 17:41:42.983 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.033s)
+2025-03-02 17:41:43.018 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": << Empty Schema >>
+2025-03-02 17:41:43.034 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "1 - create tables"
+2025-03-02 17:41:43.074 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "public", now at version v1 (execution time 00:00.022s)
+2025-03-02 17:41:43.098 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2320 ms
+2025-03-02 17:42:01.279 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-02 17:42:01.956 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-03-02 17:42:02.152 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-02 17:42:02.561 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-03-02 17:42:03.098 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-02 17:42:03.798 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/spring-weather-app16 (PostgreSQL 16.3)
+2025-03-02 17:42:03.861 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.039s)
+2025-03-02 17:42:03.907 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2025-03-02 17:42:03.910 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-03-02 17:42:03.938 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2657 ms
+2025-03-02 17:42:05.696 [http-nio-8080-exec-3] INFO  r.s.controller.AuthController - Запрос GET успешно обработан /register
+2025-03-02 17:42:16.941 [http-nio-8080-exec-4] INFO  r.s.controller.AuthController - Запрос POST успешно обработан /register
+2025-03-02 17:42:17.132 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - insert into users (password, login) values (?, ?)
+2025-03-02 17:42:17.134 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [$2a$10$JLGtfp.nB3ocGpWPS9zWuOwZX./oHAMtStaEWCmskTNBfvBTl9P/.]
+2025-03-02 17:42:17.134 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [sergej]
+2025-03-02 17:42:19.414 [http-nio-8080-exec-6] INFO  r.s.controller.AuthController - Запрос GET успешно обработан /login
+2025-03-02 17:42:19.514 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-02 17:42:19.536 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [sergej]
+2025-03-02 17:42:19.645 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - insert into sessions (expires_at, user_id, session_id) values (?, ?, ?)
+2025-03-02 17:42:19.646 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2025-03-02T18:42:19.623643139]
+2025-03-02 17:42:19.648 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+2025-03-02 17:42:19.648 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [cf8a066d-8a5b-4001-b20f-8902e6e86597]
+2025-03-02 17:42:19.700 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-02 17:42:19.701 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [cf8a066d-8a5b-4001-b20f-8902e6e86597]
+2025-03-02 17:42:19.709 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-02 17:42:19.710 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-02 17:42:19.745 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-02 17:42:19.746 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [cf8a066d-8a5b-4001-b20f-8902e6e86597]
+2025-03-02 17:42:19.748 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-02 17:42:19.748 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-02 17:42:22.909 [http-nio-8080-exec-9] INFO  r.s.controller.LocationController - Запрос GET успешно обработан /weather
+2025-03-02 17:42:23.417 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_
