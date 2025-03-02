@@ -5,13 +5,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import ru.shaxowskiy.models.dto.LocationDTO;
+import org.springframework.web.bind.annotation.*;
+import ru.shaxowskiy.models.dto.WeatherResponseDTO;
+import ru.shaxowskiy.models.dto.LocationResponseDTO;
 import ru.shaxowskiy.services.LocationService;
 import ru.shaxowskiy.services.OpenWeatherApiService;
+
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -21,18 +21,21 @@ public class LocationController {
     private final LocationService locationService;
 
     @Autowired
-    public LocationController(OpenWeatherApiService openWeatherApiService, LocationService locationService1) {
-        this.openWeatherApiService = openWeatherApiService;
+    public LocationController(OpenWeatherApiService locationService, LocationService locationService1) {
+        this.openWeatherApiService = locationService;
         this.locationService = locationService1;
     }
 
     @GetMapping("/weather")
     public String getInfoAboutCity(@RequestParam String city, Model model) throws JsonProcessingException {
-        log.info("Запрос GET успешно обработан /weather");
-        LocationDTO infoByCity = openWeatherApiService.getInfoByCity(city);
-        model.addAttribute("location", infoByCity);
-        model.addAttribute("history", locationService.findAll());
+        List<LocationResponseDTO> infoByCity = openWeatherApiService.getInfoAboutCityForName(city);
+        model.addAttribute("locations", infoByCity);
         return "weather-search";
     }
 
+    @PostMapping("/weather/delete")
+    public String deleteInfoAboutCity(@ModelAttribute("location") WeatherResponseDTO weatherResponseDTO){
+        locationService.delete(weatherResponseDTO.getCoord().getLat(), weatherResponseDTO.getCoord().getLon());
+        return "redirect:/welcome";
+    }
 }

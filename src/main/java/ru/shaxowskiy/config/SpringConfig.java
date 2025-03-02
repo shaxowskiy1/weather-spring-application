@@ -2,6 +2,7 @@ package ru.shaxowskiy.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.flywaydb.core.Flyway;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -99,13 +100,11 @@ public class SpringConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public RestTemplate restTemplate() {
+    public RestTemplate restTemplate(){
         return new RestTemplate();
     }
-
     @Bean
-
-    public ObjectMapper objectMapper() {
+    public ObjectMapper objectMapper(){
         return new ObjectMapper();
     }
 

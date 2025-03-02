@@ -57,7 +57,7 @@ public class UserRepository implements CrudRepository<User, Long> {
         try (Session session = sessionFactory.openSession()) {
             Query<User> query = session.createQuery("FROM User WHERE username = :name", User.class);
             query.setParameter("name", username);
-            return query.getSingleResult();
+            return query.uniqueResult();
         }
     }
 

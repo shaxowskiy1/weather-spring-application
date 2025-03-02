@@ -3,40 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Search</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<p th:text="${location.getName()}"/>
-<p th:text="${location.getCoord().getLat()}"/>
-<p th:text="${location.getCoord().getLon()}"/>
-<p th:text="${location.getSys().getCountry()}"/>
-<ul>
-    <li th:each="weather : ${location.getWeather()}">
-        <p th:text="'Main: ' + ${weather.getDescription()}"></p>
-        <p th:text="'Description: ' + ${weather.getMain()}"></p>
-    </li>
-</ul>
-<form th:method="post" th:action="@{/welcome}" th:object="${location}">
-    <input type="hidden" name="name" th:value="${location.getName()}"/>
-    <input type="hidden" name="coord.lat" th:value="${location.getCoord().getLat()}"/>
-    <input type="hidden" name="coord.lon" th:value="${location.getCoord().getLon()}"/>
-    <input type="hidden" name="sys.country" th:value="${location.getSys().getCountry()}"/>
-    <li th:each="weather: ${location.getWeather()}">
-        <input type="hidden" name="weather.main" th:value="${weather.getMain()}"/>
-        <input type="hidden" name="weather.description" th:value="${weather.getDescription()}"/>
-
-    </li>
-
-    <div class="mt-auto">
-        <button type="submit" class="btn btn-primary w-100">Add</button>
+<body class="bg-gray-100 p-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div th:each="location : ${locations}" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+        <p class="text-xl font-bold text-gray-800" th:text="${location.getName()}"></p>
+        <p class="text-sm text-gray-600 mt-2">
+            <span class="font-semibold">Lat:</span>
+            <span th:text="${location.getLat()}"></span>
+        </p>
+        <p class="text-sm text-gray-600">
+            <span class="font-semibold">Lon:</span>
+            <span th:text="${location.getLon()}"></span>
+        </p>
+        <p class="text-sm text-gray-600">
+            <span class="font-semibold">Country:</span>
+            <span th:text="${location.getCountry()}"></span>
+        </p>
+        <p class="text-sm text-gray-600" th:if="${location.state != null}">
+            <span class="font-semibold">State:</span>
+            <span th:text="${location.state}"></span>
+        </p>
+        <form th:method="post" th:action="@{/welcome}" th:object="${location}" class="mt-4">
+            <input type="hidden" name="name" th:value="${location.name}"/>
+            <input type="hidden" name="lat" th:value="${location.lat}"/>
+            <input type="hidden" name="lon" th:value="${location.lon}"/>
+            <input type="hidden" name="country" th:value="${location.country}"/>
+            <input type="hidden" name="state" th:value="${location.state}"/>
+            <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-300">
+                Add
+            </button>
+        </form>
     </div>
+</div>
 
-    <br>
-    <hr>
-    <h2>History added location:</h2>
-    <li th:each="historyLocation : ${history}">
-        <p th:text="'Name: ' + ${historyLocation.getName()}"></p>
-    </li>
-</form>
 </body>
 </html>

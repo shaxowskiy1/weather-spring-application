@@ -3,27 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Search</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<div th:fragment="header" style="position: fixed; top: 0; right: 0; padding: 10px; display: flex; align-items: center;">
-    <div style="display: flex; align-items: center; margin-right: 20px;">
-        <a th:text="${user.getUsername()}"></a>
+<body class="bg-gray-100">
+
+<div th:fragment="header" class="fixed top-0 right-0 p-4 flex items-center bg-white shadow-md">
+    <div class="flex items-center mr-5">
+        <span class="text-gray-800 font-semibold" th:text="${user.getUsername()}"></span>
     </div>
-    <form th:action="@{/auth/logout}" th:method="post" style="margin: 0;">
-        <button type="submit">Logout</button>
+    <form th:action="@{/auth/logout}" th:method="post" class="m-0">
+        <button type="submit" class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600 transition-colors duration-300">
+            Logout
+        </button>
     </form>
 </div>
 
-<div class="container">
-    <h1>Welcome</h1>
-    <form th:action="@{/weather}" method="get">
+<div class="container mx-auto p-6 mt-16">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Welcome</h1>
+
+    <form th:action="@{/weather}" method="get" class="mb-8">
         <div class="form-group">
-            <label for="city">Enter City:</label>
-            <input type="text" id="city" name="city" class="form-control" placeholder="Enter city name" required>
+            <label for="city" class="block text-gray-700">Enter City:</label>
+            <input type="text" id="city" name="city" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter city name" required>
         </div>
-        <button type="submit" class="btn btn-primary">Search</button>
+        <button type="submit" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300">
+            Search
+        </button>
     </form>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div th:each="weatherOfCity : ${cardWeather}" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 relative">
+            <form th:action="@{/weather/delete}" th:method="post" class="absolute top-2 right-2">
+                <input type="hidden" name="name" th:value="${weatherOfCity.getName()}"/>
+                <input type="hidden" name="coord.lat" th:value="${weatherOfCity.getCoord().getLat()}"/>
+                <input type="hidden" name="coord.lon" th:value="${weatherOfCity.getCoord().getLon()}"/>
+                <input type="hidden" name="sys.country" th:value="${weatherOfCity.getSys().getCountry()}"/>
+                <button type="submit" class="text-red-500 hover:text-red-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </form>
+            <p class="text-xl font-bold text-gray-800" th:text="${weatherOfCity.getName()}"></p>
+            <p class="text-sm text-gray-600 mt-2">
+                <span class="font-semibold">Lat:</span>
+                <span th:text="${weatherOfCity.getCoord().getLat()}"></span>
+            </p>
+            <p class="text-sm text-gray-600 mt-2">
+                <span class="font-semibold">Lat:</span>
+                <span th:text="${weatherOfCity.getCoord().getLon()}"></span>
+            </p>
+            <p class="text-sm text-gray-600">
+                <span class="font-semibold">Country:</span>
+                <span th:text="${weatherOfCity.getSys().getCountry()}"></span>
+            </p>
+
+            <div th:each="weather : ${weatherOfCity.getWeather()}" class="mt-4">
+                <p class="text-sm text-gray-600">
+                    <span class="font-semibold">Description:</span>
+                    <span th:text="${weather.getDescription()}"></span>
+                </p>
+                <p class="text-sm text-gray-600">
+                    <span class="font-semibold">Main:</span>
+                    <span th:text="${weather.getMain()}"></span>
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
+
 </body>
 </html>
