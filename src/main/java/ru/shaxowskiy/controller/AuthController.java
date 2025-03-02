@@ -12,6 +12,7 @@ import ru.shaxowskiy.models.dto.UserDTO;
 import ru.shaxowskiy.services.SessionService;
 import ru.shaxowskiy.services.UserService;
 import ru.shaxowskiy.util.PasswordIsNotConfirmValidator;
+import ru.shaxowskiy.util.UserNotFoundValidation;
 import ru.shaxowskiy.util.UsernameAlreadyTakenValidator;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,13 +24,15 @@ import javax.validation.Valid;
 @RequestMapping("/auth")
 public class AuthController {
 
+    private final UserNotFoundValidation userNotFoundValidation;
     private final PasswordIsNotConfirmValidator passwordIsNotConfirmValidator;
     private final UsernameAlreadyTakenValidator usernameAlreadyTakenValidator;
     private final SessionService sessionService;
     private final UserService userService;
 
     @Autowired
-    public AuthController(PasswordIsNotConfirmValidator passwordIsNotConfirmValidator, UsernameAlreadyTakenValidator usernameAlreadyTakenValidator, SessionService sessionService, UserService userService) {
+    public AuthController(UserNotFoundValidation userNotFoundValidation, PasswordIsNotConfirmValidator passwordIsNotConfirmValidator, UsernameAlreadyTakenValidator usernameAlreadyTakenValidator, SessionService sessionService, UserService userService) {
+        this.userNotFoundValidation = userNotFoundValidation;
         this.passwordIsNotConfirmValidator = passwordIsNotConfirmValidator;
         this.usernameAlreadyTakenValidator = usernameAlreadyTakenValidator;
         this.sessionService = sessionService;
@@ -56,22 +59,28 @@ public class AuthController {
     }
 
     @GetMapping("/login")
-    public String login(){
+    public String login(Model model){
+        model.addAttribute("user", new User());
         return "login";
     }
 
     @PostMapping("/login")
     public String login(@RequestParam String username,
                         @RequestParam String password,
+                        @ModelAttribute("user") User user,
+                        BindingResult bindingResult,
                         Model model,
                         HttpServletResponse response) {
+
         User foundUser = userService.findByUsername(username);
+        userNotFoundValidation.validate(user, bindingResult);
+        if(bindingResult.hasErrors()){
+            return "login";
+        }
         if (username.equals(foundUser.getUsername()) && BCrypt.checkpw(password, foundUser.getPassword())) {
-            model.addAttribute("message", "Успешный вход!");
             sessionService.createSession(foundUser, response);
             return "redirect:/welcome";
         } else {
-            model.addAttribute("error", "Неверное имя пользователя или пароль.");
             return "redirect:/auth/login";
         }
     }
