@@ -1,5 +1,6 @@
 package ru.shaxowskiy.repositories;
 
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -10,8 +11,9 @@ import ru.shaxowskiy.models.Session;
 
 import java.util.*;
 
+@Slf4j
 @Repository
-public class SessionRepository implements CrudRepository<Session, String>{
+public class SessionRepository implements CrudRepository<Session, String> {
     private final SessionFactory sessionFactory;
 
     @Autowired
@@ -21,9 +23,7 @@ public class SessionRepository implements CrudRepository<Session, String>{
 
     @Override
     public Session findById(String sessionId) {
-        Transaction transaction = null;
-        try(org.hibernate.Session session = sessionFactory.openSession()){
-            transaction = session.beginTransaction();
+        try (org.hibernate.Session session = sessionFactory.openSession()) {
             Query query = session.createQuery("FROM Session WHERE id = :sessionId");
             query.setParameter("sessionId", sessionId);
             return (Session) query.getSingleResult();
@@ -37,15 +37,9 @@ public class SessionRepository implements CrudRepository<Session, String>{
 
     @Override
     public void save(Session sessionUser) {
-        Transaction transaction = null;
         try (org.hibernate.Session session = sessionFactory.openSession()) {
-            transaction = session.beginTransaction();
             session.save(sessionUser);
-            transaction.commit();
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
             e.printStackTrace();
         }
     }
@@ -57,12 +51,10 @@ public class SessionRepository implements CrudRepository<Session, String>{
 
     @Override
     public void delete(String sessionId) {
-        Transaction transaction = null;
-        try(org.hibernate.Session session = sessionFactory.openSession()){
-            transaction = session.beginTransaction();
-            Query query = session.createQuery("DELETE FROM Session WHERE id = :sessionId");
-            query.setParameter("sessionId", sessionId);
-            System.out.println("УДАЛЕНА СЕССИЯ");
-        }
+        org.hibernate.Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("DELETE FROM Session WHERE id = :sessionId");
+        query.setParameter("sessionId", sessionId);
+        query.executeUpdate();
+        log.debug("Сессия пользователя удалена");
     }
 }

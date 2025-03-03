@@ -86,8 +86,8 @@ public class AuthController {
     }
 
     @PostMapping("/logout")
-    public String logout(HttpServletRequest req){
-        sessionService.delete(req);
+    public String logout(HttpServletRequest req, HttpServletResponse res){
+        sessionService.delete(req, res);
         return "redirect:/auth/login";
     }
 }

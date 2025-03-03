@@ -9,12 +9,14 @@ import ru.shaxowskiy.repositories.SessionRepository;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.UUID;
 
 @Service
+@Transactional
 public class SessionService {
 
     private final SessionRepository sessionRepository;
@@ -54,13 +56,18 @@ public class SessionService {
         return Optional.empty();
     }
 
-    public void delete(HttpServletRequest req) {
+    public void delete(HttpServletRequest req, HttpServletResponse res) {
         Cookie[] cookies = req.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
                 if ("session_id".equals(cookie.getName())) {
                     String sessionId = cookie.getValue();
                     sessionRepository.delete(sessionId);
+
+                    cookie.setValue(null);
+                    cookie.setMaxAge(0);
+                    cookie.setPath("/");
+                    res.addCookie(cookie);
                 }
             }
         }
