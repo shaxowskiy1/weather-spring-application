@@ -8,47 +8,44 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Repository;
 import ru.shaxowskiy.models.Session;
+import ru.shaxowskiy.models.User;
 
+import javax.transaction.Transactional;
 import java.util.*;
 
 @Slf4j
 @Repository
-public class SessionRepository implements CrudRepository<Session, String> {
+@Transactional
+public class SessionRepositoryImpl implements SessionRepository{
     private final SessionFactory sessionFactory;
 
     @Autowired
-    public SessionRepository(@Lazy SessionFactory sessionFactory) {
+    public SessionRepositoryImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
     @Override
     public Session findById(String sessionId) {
-        try (org.hibernate.Session session = sessionFactory.openSession()) {
-            Query query = session.createQuery("FROM Session WHERE id = :sessionId");
-            query.setParameter("sessionId", sessionId);
-            return (Session) query.getSingleResult();
-        }
+        org.hibernate.Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("FROM Session WHERE id = :sessionId");
+        query.setParameter("sessionId", sessionId);
+        return (Session) query.getSingleResult();
     }
-
     @Override
     public List<Session> findAll() {
         return null;
     }
-
     @Override
     public void save(Session sessionUser) {
-        try (org.hibernate.Session session = sessionFactory.openSession()) {
-            session.save(sessionUser);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+        org.hibernate.Session session = sessionFactory.getCurrentSession();
 
+        session.persist(sessionUser);
+
+    }
     @Override
     public void update(Session entity, String s) {
 
     }
-
     @Override
     public void delete(String sessionId) {
         org.hibernate.Session session = sessionFactory.getCurrentSession();
@@ -56,5 +53,10 @@ public class SessionRepository implements CrudRepository<Session, String> {
         query.setParameter("sessionId", sessionId);
         query.executeUpdate();
         log.debug("Сессия пользователя удалена");
+    }
+
+    @Override
+    public List<Session> findByUser(User user) {
+        return List.of();
     }
 }

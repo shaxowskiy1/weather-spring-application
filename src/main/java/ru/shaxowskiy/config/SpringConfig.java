@@ -40,13 +40,11 @@ public class SpringConfig implements WebMvcConfigurer {
 
     private final ApplicationContext applicationContext;
     private final Environment environment;
-    private final AuthInterceptor authInterceptor;
 
     @Autowired
-    public SpringConfig(ApplicationContext applicationContext, Environment environment, AuthInterceptor authInterceptor) {
+    public SpringConfig(ApplicationContext applicationContext, Environment environment) {
         this.applicationContext = applicationContext;
         this.environment = environment;
-        this.authInterceptor = authInterceptor;
     }
 
     @Bean
@@ -128,11 +126,5 @@ public class SpringConfig implements WebMvcConfigurer {
         flyway.migrate();
 
         return flyway;
-    }
-
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(authInterceptor)
-                .addPathPatterns("/welcome/**", "/welcome");
     }
 }

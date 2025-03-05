@@ -35,11 +35,13 @@ public class WelcomeController {
 
     @GetMapping
     public String welcome(HttpServletRequest req, Model model){
+        System.out.println("get method welcome");
         User user = sessionService.getUserFromSession(req).orElseThrow(null);
         model.addAttribute("user", user);
         try {
             model.addAttribute("cardWeather", openWeatherApiService.getInfoAboutCityForCoord(locationService.findByUser(user)));
         } catch (JsonProcessingException e) {
+            System.out.println("catch get welcome");
             throw new RuntimeException(e);
         }
         return "welcome";

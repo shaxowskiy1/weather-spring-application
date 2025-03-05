@@ -11,6 +11,7 @@ import ru.shaxowskiy.models.Location;
 import ru.shaxowskiy.models.dto.LocationResponseDTO;
 import ru.shaxowskiy.models.dto.WeatherResponseDTO;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +48,7 @@ public class OpenWeatherApiService {
             WeatherResponseDTO weatherResponseDTO = objectMapper.readValue(response, WeatherResponseDTO.class);
             listOfCitiesWithWeather.add(weatherResponseDTO);
         }
+        System.out.println("Complete getInfoByCoorg");
         return listOfCitiesWithWeather;
     }
 }

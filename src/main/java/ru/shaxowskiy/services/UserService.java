@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 import ru.shaxowskiy.models.User;
 import ru.shaxowskiy.models.dto.UserDTO;
 import ru.shaxowskiy.repositories.UserRepository;
+import ru.shaxowskiy.repositories.UserRepositoryImpl;
 
+import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service

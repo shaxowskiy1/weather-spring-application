@@ -6,9 +6,10 @@ import ru.shaxowskiy.exception.LocationNotFoundException;
 import ru.shaxowskiy.models.Location;
 import ru.shaxowskiy.models.User;
 import ru.shaxowskiy.models.dto.LocationResponseDTO;
-import ru.shaxowskiy.models.dto.WeatherResponseDTO;
 import ru.shaxowskiy.repositories.LocationRepository;
+import ru.shaxowskiy.repositories.LocationRepositoryImpl;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
@@ -22,6 +23,7 @@ public class LocationService {
     public LocationService(LocationRepository locationRepository) {
         this.locationRepository = locationRepository;
     }
+
 
     public Location findById(Long id){
         return Optional.ofNullable(locationRepository.findById(id)).orElseThrow(() -> new LocationNotFoundException("This location is not found with id " + id));

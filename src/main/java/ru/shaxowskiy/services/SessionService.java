@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.shaxowskiy.models.Session;
 import ru.shaxowskiy.models.User;
 import ru.shaxowskiy.repositories.SessionRepository;
-
+import ru.shaxowskiy.repositories.SessionRepositoryImpl;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +16,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-@Transactional
 public class SessionService {
 
     private final SessionRepository sessionRepository;
