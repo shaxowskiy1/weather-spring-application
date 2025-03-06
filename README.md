@@ -25,9 +25,14 @@ ____________________________________________________
 The application enables users to:
 
 Sign up for an account
+
 Sign in using their credentials
+
 Search for locations by entering a query in the search bar
+
 Save locations to track weather conditions
+
 Remove locations from their saved list
+
 Log out of their account
 
