@@ -4144,3 +4144,510 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 2025-03-07 00:21:54.814 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [28]
 2025-03-07 00:21:54.815 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
 2025-03-07 00:21:54.816 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [28]
+2025-03-07 00:29:44.882 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-07 00:29:45.393 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-03-07 00:29:45.544 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-07 00:29:45.922 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-03-07 00:29:46.197 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.5.Final
+2025-03-07 00:29:46.660 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-07 00:29:47.331 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/spring-weather-app16 (PostgreSQL 16.3)
+2025-03-07 00:29:47.378 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.026s)
+2025-03-07 00:29:47.409 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2025-03-07 00:29:47.413 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-03-07 00:29:47.438 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2554 ms
+2025-03-07 00:30:21.108 [http-nio-8080-exec-1] INFO  r.s.controller.AuthController - GET-method register with form
+2025-03-07 00:30:27.637 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:30:27.639 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [testlydia]
+2025-03-07 00:30:27.781 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - insert into users (password, login) values (?, ?)
+2025-03-07 00:30:27.781 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [$2a$10$AvpdQA4//m5OgX0NEbvlF.U0HX1ZTsAUiOrNN66XgfHMLVaraQ/B2]
+2025-03-07 00:30:27.782 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [testlydia]
+2025-03-07 00:30:29.526 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:30:29.527 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [testlydia]
+2025-03-07 00:30:29.553 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:30:29.553 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [testlydia]
+2025-03-07 00:30:29.733 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - insert into sessions (expires_at, user_id, session_id) values (?, ?, ?)
+2025-03-07 00:30:29.734 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2025-03-07T01:30:29.701306438]
+2025-03-07 00:30:29.736 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [1]
+2025-03-07 00:30:29.736 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [bdefd518-d07d-48aa-af40-4f4f9613f878]
+2025-03-07 00:30:29.783 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:30:29.783 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [bdefd518-d07d-48aa-af40-4f4f9613f878]
+2025-03-07 00:30:29.792 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:30:29.793 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:29.829 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:30:29.829 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [bdefd518-d07d-48aa-af40-4f4f9613f878]
+2025-03-07 00:30:29.831 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:30:29.832 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:29.864 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:30:29.865 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:29.887 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:30:29.887 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:37.650 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:30:37.651 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [bdefd518-d07d-48aa-af40-4f4f9613f878]
+2025-03-07 00:30:37.653 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:30:37.653 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:37.679 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:30:37.679 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [bdefd518-d07d-48aa-af40-4f4f9613f878]
+2025-03-07 00:30:37.681 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:30:37.681 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:37.704 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-03-07 00:30:37.705 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504461]
+2025-03-07 00:30:37.705 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6174943]
+2025-03-07 00:30:37.706 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Moscow]
+2025-03-07 00:30:37.706 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+2025-03-07 00:30:37.732 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:30:37.732 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [bdefd518-d07d-48aa-af40-4f4f9613f878]
+2025-03-07 00:30:37.734 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:30:37.735 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:37.756 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:30:37.756 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [bdefd518-d07d-48aa-af40-4f4f9613f878]
+2025-03-07 00:30:37.758 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:30:37.758 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:37.778 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:30:37.779 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:37.782 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:30:37.782 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:37.906 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:30:37.907 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:37.908 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:30:37.909 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:47.966 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:30:47.967 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [bdefd518-d07d-48aa-af40-4f4f9613f878]
+2025-03-07 00:30:47.969 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:30:47.969 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:47.999 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:30:47.999 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [bdefd518-d07d-48aa-af40-4f4f9613f878]
+2025-03-07 00:30:48.001 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:30:48.001 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:48.021 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-03-07 00:30:48.021 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [56.839104]
+2025-03-07 00:30:48.021 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [60.60825]
+2025-03-07 00:30:48.021 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Yekaterinburg]
+2025-03-07 00:30:48.022 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [1]
+2025-03-07 00:30:48.051 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:30:48.052 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [bdefd518-d07d-48aa-af40-4f4f9613f878]
+2025-03-07 00:30:48.054 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:30:48.054 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:48.074 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:30:48.074 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [bdefd518-d07d-48aa-af40-4f4f9613f878]
+2025-03-07 00:30:48.076 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:30:48.077 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:48.097 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:30:48.098 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:48.099 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:30:48.099 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:48.253 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:30:48.253 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:30:48.255 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:30:48.256 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [1]
+2025-03-07 00:35:30.886 [http-nio-8080-exec-3] INFO  r.s.controller.AuthController - GET-method register with form
+2025-03-07 00:35:36.763 [http-nio-8080-exec-4] INFO  r.s.controller.AuthController - GET-method register with form
+2025-03-07 00:35:49.653 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:35:49.653 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [spavelin]
+2025-03-07 00:35:54.079 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:35:54.080 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [spavelin]
+2025-03-07 00:35:54.177 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - insert into users (password, login) values (?, ?)
+2025-03-07 00:35:54.178 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [$2a$10$GyHxlQiDPflkJYM0Cs9y5uZMqA2dCnBWRCg5G8j6JzOSar8rhN9z6]
+2025-03-07 00:35:54.178 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [spavelin]
+2025-03-07 00:36:01.954 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:36:01.955 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [spavelin]
+2025-03-07 00:36:10.065 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:36:10.065 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [spavelin1]
+2025-03-07 00:36:10.163 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - insert into users (password, login) values (?, ?)
+2025-03-07 00:36:10.163 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [$2a$10$uMMFKRpp21gSscccxm7EO.XfJetVoCBnRGkcXJCfZvIA.qqZlWNsu]
+2025-03-07 00:36:10.163 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [spavelin1]
+2025-03-07 00:36:14.784 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:36:14.785 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [spavelin]
+2025-03-07 00:36:14.808 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:36:14.808 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [spavelin]
+2025-03-07 00:36:19.514 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:36:19.514 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [spavelin]
+2025-03-07 00:36:19.535 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:36:19.536 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [spavelin]
+2025-03-07 00:36:19.711 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - insert into sessions (expires_at, user_id, session_id) values (?, ?, ?)
+2025-03-07 00:36:19.712 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2025-03-07T01:36:19.684265975]
+2025-03-07 00:36:19.712 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [2]
+2025-03-07 00:36:19.712 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [ed4eac27-f5fd-4d68-86fa-ccf515d4c997]
+2025-03-07 00:36:19.739 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:36:19.740 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [ed4eac27-f5fd-4d68-86fa-ccf515d4c997]
+2025-03-07 00:36:19.742 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:19.742 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:36:19.763 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:36:19.763 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [ed4eac27-f5fd-4d68-86fa-ccf515d4c997]
+2025-03-07 00:36:19.765 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:19.766 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:36:19.786 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:36:19.787 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:36:19.809 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:36:19.809 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:36:26.700 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:36:26.700 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [spavelin1]
+2025-03-07 00:36:26.722 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:36:26.722 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [spavelin1]
+2025-03-07 00:36:26.887 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - insert into sessions (expires_at, user_id, session_id) values (?, ?, ?)
+2025-03-07 00:36:26.887 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2025-03-07T01:36:26.867503408]
+2025-03-07 00:36:26.888 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [3]
+2025-03-07 00:36:26.888 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [987a6381-4a48-4fa6-8845-41001d5664aa]
+2025-03-07 00:36:26.909 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:36:26.909 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [987a6381-4a48-4fa6-8845-41001d5664aa]
+2025-03-07 00:36:26.911 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:26.912 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:26.933 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:36:26.934 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [987a6381-4a48-4fa6-8845-41001d5664aa]
+2025-03-07 00:36:26.935 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:26.935 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:26.953 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:36:26.954 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:26.972 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:36:26.972 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:39.802 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:36:39.802 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [987a6381-4a48-4fa6-8845-41001d5664aa]
+2025-03-07 00:36:39.807 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:39.807 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:39.825 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:36:39.826 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [987a6381-4a48-4fa6-8845-41001d5664aa]
+2025-03-07 00:36:39.827 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:39.828 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:39.846 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-03-07 00:36:39.847 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [56.839104]
+2025-03-07 00:36:39.847 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [60.60825]
+2025-03-07 00:36:39.847 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Yekaterinburg]
+2025-03-07 00:36:39.847 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [3]
+2025-03-07 00:36:39.872 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:36:39.872 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [987a6381-4a48-4fa6-8845-41001d5664aa]
+2025-03-07 00:36:39.874 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:39.874 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:39.892 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:36:39.893 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [987a6381-4a48-4fa6-8845-41001d5664aa]
+2025-03-07 00:36:39.895 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:39.895 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:39.913 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:36:39.914 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:39.915 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:39.916 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:40.014 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:36:40.014 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:40.017 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:40.017 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:41.633 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:36:41.633 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [987a6381-4a48-4fa6-8845-41001d5664aa]
+2025-03-07 00:36:41.637 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:41.638 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:41.657 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:36:41.657 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [987a6381-4a48-4fa6-8845-41001d5664aa]
+2025-03-07 00:36:41.659 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:41.659 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:41.679 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-03-07 00:36:41.679 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [56.839104]
+2025-03-07 00:36:41.679 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [60.60825]
+2025-03-07 00:36:41.679 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Yekaterinburg]
+2025-03-07 00:36:41.679 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [3]
+2025-03-07 00:36:41.702 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:36:41.702 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [987a6381-4a48-4fa6-8845-41001d5664aa]
+2025-03-07 00:36:41.704 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:41.704 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:41.723 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:36:41.723 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [987a6381-4a48-4fa6-8845-41001d5664aa]
+2025-03-07 00:36:41.725 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:41.725 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:41.746 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:36:41.747 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:41.748 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:41.748 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:42.206 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:36:42.206 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:36:42.208 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:36:42.208 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:37:00.608 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:37:00.608 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [987a6381-4a48-4fa6-8845-41001d5664aa]
+2025-03-07 00:37:00.610 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:37:00.610 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:37:00.632 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:37:00.632 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [987a6381-4a48-4fa6-8845-41001d5664aa]
+2025-03-07 00:37:00.635 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:37:00.636 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:37:00.655 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:37:00.655 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:37:00.657 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:37:00.657 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:37:00.946 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:37:00.947 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:37:00.949 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:37:00.949 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [3]
+2025-03-07 00:39:42.327 [http-nio-8080-exec-4] INFO  r.s.controller.AuthController - GET-method register with form
+2025-03-07 00:39:54.195 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:39:54.195 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [spavelin]
+2025-03-07 00:39:54.220 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:39:54.221 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [spavelin]
+2025-03-07 00:39:54.385 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - insert into sessions (expires_at, user_id, session_id) values (?, ?, ?)
+2025-03-07 00:39:54.385 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2025-03-07T01:39:54.369664868]
+2025-03-07 00:39:54.385 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [2]
+2025-03-07 00:39:54.385 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [c4be8983-aad3-447c-8646-58da7137f4f8]
+2025-03-07 00:39:54.406 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:39:54.407 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [c4be8983-aad3-447c-8646-58da7137f4f8]
+2025-03-07 00:39:54.408 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:39:54.408 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:39:54.425 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:39:54.425 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [c4be8983-aad3-447c-8646-58da7137f4f8]
+2025-03-07 00:39:54.427 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:39:54.427 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:39:54.447 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:39:54.448 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:39:54.465 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:39:54.465 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:02.016 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:40:02.016 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [c4be8983-aad3-447c-8646-58da7137f4f8]
+2025-03-07 00:40:02.018 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:40:02.018 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:02.037 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:40:02.037 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [c4be8983-aad3-447c-8646-58da7137f4f8]
+2025-03-07 00:40:02.039 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:40:02.039 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:02.057 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-03-07 00:40:02.058 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504461]
+2025-03-07 00:40:02.058 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6174943]
+2025-03-07 00:40:02.058 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Moscow]
+2025-03-07 00:40:02.058 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [2]
+2025-03-07 00:40:02.081 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:40:02.081 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [c4be8983-aad3-447c-8646-58da7137f4f8]
+2025-03-07 00:40:02.083 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:40:02.083 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:02.101 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:40:02.101 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [c4be8983-aad3-447c-8646-58da7137f4f8]
+2025-03-07 00:40:02.103 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:40:02.103 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:02.122 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:40:02.122 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:02.123 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:40:02.123 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:02.252 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:40:02.253 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:02.255 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:40:02.256 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:19.538 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:40:19.539 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [c4be8983-aad3-447c-8646-58da7137f4f8]
+2025-03-07 00:40:19.540 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:40:19.540 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:19.560 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:40:19.560 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [c4be8983-aad3-447c-8646-58da7137f4f8]
+2025-03-07 00:40:19.562 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:40:19.562 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:19.579 [http-nio-8080-exec-2] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-03-07 00:40:19.579 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504461]
+2025-03-07 00:40:19.580 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6174943]
+2025-03-07 00:40:19.580 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Moscow]
+2025-03-07 00:40:19.580 [http-nio-8080-exec-2] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [2]
+2025-03-07 00:40:19.645 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:40:19.645 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [c4be8983-aad3-447c-8646-58da7137f4f8]
+2025-03-07 00:40:19.647 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:40:19.647 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:19.667 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:40:19.668 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [c4be8983-aad3-447c-8646-58da7137f4f8]
+2025-03-07 00:40:19.669 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:40:19.670 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:19.688 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:40:19.689 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:19.690 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:40:19.691 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:19.870 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:40:19.871 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:40:19.873 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:40:19.873 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [2]
+2025-03-07 00:49:01.037 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcher'
+2025-03-07 00:49:01.563 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.28.Final
+2025-03-07 00:49:01.744 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2025-03-07 00:49:02.132 [RMI TCP Connection(2)-127.0.0.1] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2025-03-07 00:49:02.431 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.5.Final
+2025-03-07 00:49:02.907 [RMI TCP Connection(2)-127.0.0.1] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-03-07 00:49:03.563 [RMI TCP Connection(2)-127.0.0.1] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5433/spring-weather-app16 (PostgreSQL 16.3)
+2025-03-07 00:49:03.611 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.027s)
+2025-03-07 00:49:03.650 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 1
+2025-03-07 00:49:03.654 [RMI TCP Connection(2)-127.0.0.1] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2025-03-07 00:49:03.677 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2638 ms
+2025-03-07 00:49:22.574 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - delete from sessions where session_id=?
+2025-03-07 00:49:22.576 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [c4be8983-aad3-447c-8646-58da7137f4f8]
+2025-03-07 00:49:35.973 [http-nio-8080-exec-3] INFO  r.s.controller.AuthController - GET-method register with form
+2025-03-07 00:49:41.200 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:49:41.201 [http-nio-8080-exec-4] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [test]
+2025-03-07 00:49:48.050 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:49:48.051 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [test1]
+2025-03-07 00:49:48.179 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - insert into users (password, login) values (?, ?)
+2025-03-07 00:49:48.179 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [$2a$10$KAPkyyMzMFIBr7BQFcSyLupdv0yiaWFImOqDXZG7KK/ss9cIsBi/G]
+2025-03-07 00:49:48.180 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [VARCHAR] - [test1]
+2025-03-07 00:49:51.022 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:49:51.023 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [test1]
+2025-03-07 00:49:51.078 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:49:51.079 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [test1]
+2025-03-07 00:49:51.254 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - insert into sessions (expires_at, user_id, session_id) values (?, ?, ?)
+2025-03-07 00:49:51.255 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2025-03-07T01:49:51.228243972]
+2025-03-07 00:49:51.257 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [4]
+2025-03-07 00:49:51.257 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:49:51.294 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:49:51.294 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:49:51.301 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:49:51.302 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:49:51.328 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:49:51.329 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:49:51.330 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:49:51.331 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:49:51.353 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:49:51.353 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:49:51.376 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:49:51.376 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:49:57.806 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:49:57.807 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:49:57.810 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:49:57.810 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:49:57.836 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:49:57.837 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:49:57.838 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:49:57.839 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:49:57.867 [http-nio-8080-exec-10] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-03-07 00:49:57.869 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [55.7504461]
+2025-03-07 00:49:57.870 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [37.6174943]
+2025-03-07 00:49:57.870 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Moscow]
+2025-03-07 00:49:57.870 [http-nio-8080-exec-10] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [4]
+2025-03-07 00:49:57.900 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:49:57.900 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:49:57.902 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:49:57.902 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:49:57.922 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:49:57.922 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:49:57.924 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:49:57.924 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:49:57.948 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:49:57.948 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:49:57.951 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:49:57.951 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:49:58.051 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:49:58.051 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:49:58.052 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:49:58.053 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:33.497 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:50:33.498 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:50:33.500 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:33.500 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:33.521 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:50:33.521 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:50:33.523 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:33.523 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:33.543 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:50:33.544 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:33.545 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:33.546 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:33.773 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:50:33.773 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:33.774 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:33.775 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:38.502 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:50:38.502 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:50:38.505 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:38.505 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:38.529 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:50:38.530 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:50:38.532 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:38.532 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:38.553 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-03-07 00:50:38.553 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [46.7323875]
+2025-03-07 00:50:38.553 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [-117.0001651]
+2025-03-07 00:50:38.553 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Moscow]
+2025-03-07 00:50:38.554 [http-nio-8080-exec-5] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [4]
+2025-03-07 00:50:38.592 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:50:38.592 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:50:38.594 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:38.594 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:38.615 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:50:38.616 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:50:38.617 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:38.618 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:38.639 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:50:38.639 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:38.641 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:38.641 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:38.793 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:50:38.793 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:38.794 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:38.795 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:53.264 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:50:53.264 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:50:53.266 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:53.266 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:53.287 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:50:53.288 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:50:53.289 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:53.290 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:53.309 [http-nio-8080-exec-8] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-03-07 00:50:53.309 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [56.839104]
+2025-03-07 00:50:53.309 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [60.60825]
+2025-03-07 00:50:53.309 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [Yekaterinburg]
+2025-03-07 00:50:53.309 [http-nio-8080-exec-8] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [4]
+2025-03-07 00:50:53.335 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:50:53.335 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:50:53.337 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:53.337 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:53.359 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:50:53.359 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:50:53.361 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:53.362 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:53.381 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:50:53.382 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:53.383 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:53.384 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:53.611 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:50:53.611 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:50:53.613 [http-nio-8080-exec-9] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:50:53.613 [http-nio-8080-exec-9] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:51:21.789 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - delete from sessions where session_id=?
+2025-03-07 00:51:21.789 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [395133e2-323f-4026-baa2-f01d7bb5aa90]
+2025-03-07 00:51:32.968 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:51:32.969 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [test1]
+2025-03-07 00:51:32.994 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - select user0_.id as id1_2_, user0_.password as password2_2_, user0_.login as login3_2_ from users user0_ where user0_.login=?
+2025-03-07 00:51:32.994 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [test1]
+2025-03-07 00:51:33.157 [http-nio-8080-exec-6] DEBUG org.hibernate.SQL - insert into sessions (expires_at, user_id, session_id) values (?, ?, ?)
+2025-03-07 00:51:33.157 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [TIMESTAMP] - [2025-03-07T01:51:33.142736181]
+2025-03-07 00:51:33.157 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [BIGINT] - [4]
+2025-03-07 00:51:33.157 [http-nio-8080-exec-6] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [9b11cb19-e794-41fe-8422-3bb45ae7dc24]
+2025-03-07 00:51:33.180 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:51:33.180 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [9b11cb19-e794-41fe-8422-3bb45ae7dc24]
+2025-03-07 00:51:33.182 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:51:33.183 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:51:33.200 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:51:33.200 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [9b11cb19-e794-41fe-8422-3bb45ae7dc24]
+2025-03-07 00:51:33.201 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:51:33.202 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:51:33.219 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:51:33.220 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:51:33.221 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:51:33.222 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:51:33.620 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:51:33.620 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:51:33.622 [http-nio-8080-exec-7] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:51:33.623 [http-nio-8080-exec-7] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:52:47.035 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:52:47.036 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [9b11cb19-e794-41fe-8422-3bb45ae7dc24]
+2025-03-07 00:52:47.042 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:52:47.042 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:52:47.062 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:52:47.062 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [9b11cb19-e794-41fe-8422-3bb45ae7dc24]
+2025-03-07 00:52:47.063 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:52:47.064 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:52:47.081 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL - insert into locations (latitude, longitude, name, user_id) values (?, ?, ?, ?)
+2025-03-07 00:52:47.082 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [NUMERIC] - [41.1617284]
+2025-03-07 00:52:47.082 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [2] as [NUMERIC] - [-79.6528265]
+2025-03-07 00:52:47.082 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [3] as [VARCHAR] - [St. Petersburg]
+2025-03-07 00:52:47.082 [http-nio-8080-exec-1] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [4] as [BIGINT] - [4]
+2025-03-07 00:52:47.108 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:52:47.109 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [9b11cb19-e794-41fe-8422-3bb45ae7dc24]
+2025-03-07 00:52:47.111 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:52:47.111 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:52:47.127 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select session0_.session_id as session_1_1_, session0_.expires_at as expires_2_1_, session0_.user_id as user_id3_1_ from sessions session0_ where session0_.session_id=?
+2025-03-07 00:52:47.127 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [VARCHAR] - [9b11cb19-e794-41fe-8422-3bb45ae7dc24]
+2025-03-07 00:52:47.129 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:52:47.129 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:52:47.146 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:52:47.147 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:52:47.148 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:52:47.148 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:52:47.562 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select location0_.id as id1_0_, location0_.latitude as latitude2_0_, location0_.longitude as longitud3_0_, location0_.name as name4_0_, location0_.user_id as user_id5_0_ from locations location0_ where location0_.user_id=?
+2025-03-07 00:52:47.563 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
+2025-03-07 00:52:47.564 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL - select user0_.id as id1_2_0_, user0_.password as password2_2_0_, user0_.login as login3_2_0_ from users user0_ where user0_.id=?
+2025-03-07 00:52:47.564 [http-nio-8080-exec-3] TRACE o.h.type.descriptor.sql.BasicBinder - binding parameter [1] as [BIGINT] - [4]
