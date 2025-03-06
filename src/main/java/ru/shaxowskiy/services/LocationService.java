@@ -43,7 +43,10 @@ public class LocationService {
     }
 
     public List<Location> findByUser(User user) {
-        return locationRepository.findByUser(user);
+        List<Location> locationRepositoryByUser = locationRepository.findByUser(user);
+        System.out.println("ОБЪЕКТЫ");
+        locationRepositoryByUser.stream().forEach(System.out::println);
+        return locationRepositoryByUser;
     }
     public void delete(BigDecimal lat, BigDecimal lon){
         locationRepository.delete(lat, lon);

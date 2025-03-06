@@ -29,6 +29,7 @@ public class LocationController {
     @GetMapping("/weather")
     public String getInfoAboutCity(@RequestParam String city, Model model) throws JsonProcessingException {
         List<LocationResponseDTO> infoByCity = openWeatherApiService.getInfoAboutCityForName(city);
+        System.out.println("INFO BY CITY" + infoByCity);
         model.addAttribute("locations", infoByCity);
         return "weather-search";
     }

@@ -40,6 +40,7 @@ public class WelcomeController {
         model.addAttribute("user", user);
         try {
             model.addAttribute("cardWeather", openWeatherApiService.getInfoAboutCityForCoord(locationService.findByUser(user)));
+            System.out.println("КОНТРОЛЛЕР ПО ВОЗВРАЩЕНИЮ КАРТ НА ГЛАВНОЙ СТР " + openWeatherApiService.getInfoAboutCityForCoord(locationService.findByUser(user)));
         } catch (JsonProcessingException e) {
             System.out.println("catch get welcome");
             throw new RuntimeException(e);
@@ -52,6 +53,7 @@ public class WelcomeController {
                                   HttpServletRequest httpServletRequest) {
         User userFromSession = sessionService.getUserFromSession(httpServletRequest).orElseThrow(UserNotFoundException::new);
         locationService.save(locationResponseDTO, userFromSession);
+        System.out.println("ДОБАВЛЯЕМ КАРТОЧКУ " + locationResponseDTO.toString());
         return "redirect:/welcome";
     }
 }

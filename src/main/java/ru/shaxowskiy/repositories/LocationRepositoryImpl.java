@@ -41,8 +41,6 @@ public class LocationRepositoryImpl implements LocationRepository {
     @Transactional
     public void save(Location location) {
         Session session = sessionFactory.getCurrentSession();
-        User user = location.getUser();
-        session.save(user);
         session.save(location);
     }
 
@@ -55,13 +53,14 @@ public class LocationRepositoryImpl implements LocationRepository {
     @Transactional
     public void delete(Long id) {
         Session session = sessionFactory.getCurrentSession();
-        Query query = session.createQuery("DELETE Location where id = :id", Location.class);
+        Query query = session.createQuery("DELETE FROM Location where id = :id");
         query.setParameter("id", id).executeUpdate();
     }
 
     @Transactional
     public void delete(BigDecimal lat, BigDecimal lon) {
-        Query query = sessionFactory.getCurrentSession().createQuery("DELETE FROM Location WHERE latitude = :lat AND longitude = :lon");
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query query = currentSession.createQuery("DELETE FROM Location WHERE latitude = :lat AND longitude = :lon");
         query.setParameter("lat", lat);
         query.setParameter("lon", lon);
         int result = query.executeUpdate();
